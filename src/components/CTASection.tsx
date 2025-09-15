@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from '@/contexts/FormContext';
+import GradientBG from '@/components/GradientBG';
 
 export default function CTASection() {
   const { openForm } = useForm();
@@ -36,8 +37,10 @@ export default function CTASection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
+          style={{ position: 'relative', overflow: 'hidden' }}
         >
-          <div className="cta-content">
+          <GradientBG />
+          <div className="cta-content" style={{ position: 'relative', zIndex: 10 }}>
             <h2 className="cta-title">
               Book a free call
             </h2>

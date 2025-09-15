@@ -11,6 +11,7 @@ module.exports = {
         'inter': ['Inter', 'sans-serif'],
         'poppins': ['Poppins', 'sans-serif'],
         'work-sans': ['Work Sans', 'sans-serif'],
+        'montserrat': ['Montserrat', 'sans-serif'],
       },
       colors: {
         background: 'var(--background)',

@@ -41,7 +41,7 @@ const CountUpNumber: React.FC<CountUpNumberProps> = ({ value, className }) => {
 export default function IndustryPainPoints() {
 
   return (
-    <section className="py-20 relative pain-points-section">
+    <section className="pt-20 pb-8 relative pain-points-section">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-20 left-20 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl"></div>
@@ -58,6 +58,13 @@ export default function IndustryPainPoints() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
+          {/* Badge */}
+          <div className="text-center mb-4">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 border border-blue-500">
+              <span className="text-sm font-medium text-blue-700">new revolution</span>
+            </div>
+          </div>
+
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="pain-points-main-text">Why most SMBs </span>
             <span className="pain-points-highlight">Stay stuck</span>
@@ -213,63 +220,6 @@ export default function IndustryPainPoints() {
           </div>
         </div>
 
-        {/* Stats Section */}
-        <section className="stats-section mt-20" aria-label="Key stats">
-          <div className="container mx-auto px-6">
-            <div className="stats-grid">
-              {/* Stat 1 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="stats-item"
-              >
-                <div className="stats-value">
-                  <CountUpNumber value="138" className="stats-number" />
-                  <span className="stats-unit">h</span>
-                </div>
-                <p className="stats-label">Saved monthly</p>
-              </motion.div>
-
-              {/* Divider 1 */}
-              <div className="stats-divider" aria-hidden="true"></div>
-
-              {/* Stat 2 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="stats-item"
-              >
-                <div className="stats-value">
-                  <CountUpNumber value="92" className="stats-number" />
-                  <span className="stats-unit">%</span>
-                </div>
-                <p className="stats-label">Fewer errors</p>
-              </motion.div>
-
-              {/* Divider 2 */}
-              <div className="stats-divider" aria-hidden="true"></div>
-
-              {/* Stat 3 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="stats-item"
-              >
-                <div className="stats-value">
-                  <CountUpNumber value="5" className="stats-number" />
-                  <span className="stats-unit">x</span>
-                </div>
-                <p className="stats-label">Faster resolutions</p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
 
       </div>
     </section>

@@ -3,9 +3,11 @@
 import { motion } from 'framer-motion';
 import Hero from '@/components/Hero';
 import IndustryPainPoints from '@/components/IndustryPainPoints';
-import ProcessTimeline from '@/components/ProcessTimeline';
 import CTASection from '@/components/CTASection';
 import GradientBG from '@/components/GradientBG';
+import MetricsBar from '@/components/MetricsBar';
+import ProcessSteps from '@/components/ProcessSteps';
+import DemoCTA from '@/components/DemoCTA';
 import { FormProvider } from '@/contexts/FormContext';
 import { useForm } from '@/contexts/FormContext';
 import FormSlider from '@/components/FormSlider';
@@ -41,7 +43,7 @@ function HomeContent() {
                 About Us
               </a>
               <a 
-                href="#services" 
+                href="/services" 
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
               >
                 Services
@@ -80,6 +82,9 @@ function HomeContent() {
 
       {/* Industry Pain Points Section */}
       <IndustryPainPoints />
+
+      {/* Metrics Bar Section */}
+      <MetricsBar />
 
       {/* Premium Services Section */}
       <section id="services" className="py-20 relative solutions-section">
@@ -214,26 +219,19 @@ function HomeContent() {
               viewport={{ once: true }}
               className="text-center mt-16 mb-12"
             >
-              <div className="max-w-3xl mx-auto">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-black font-poppins">
-                  Ready to Transform Your Business?
-                </h3>
-                <p className="text-lg mb-8 font-inter" style={{ color: 'var(--foreground-muted)' }}>
-                  Don't let manual processes hold you back. See how our AI solutions can revolutionize your operations.
-                </p>
-                <button
-                  onClick={openForm}
-                  className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-base font-medium rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg font-inter"
-                >
-                  Explore Our Solutions
-                </button>
-              </div>
+              <button
+                onClick={openForm}
+                className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-base font-medium rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg font-inter"
+              >
+                Explore Our Solutions
+              </button>
             </motion.div>
 
-            {/* Process Timeline */}
-            <div className="mt-20">
-              <ProcessTimeline />
+            {/* Process Steps */}
+            <div className="mt-32">
+              <ProcessSteps />
             </div>
+
           </div>
         </div>
 
@@ -390,8 +388,8 @@ function HomeContent() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <CTASection />
+      {/* Demo CTA Section */}
+      <DemoCTA />
 
       {/* Footer */}
       <footer className="bg-gray-50 border-t border-gray-200 py-12">
