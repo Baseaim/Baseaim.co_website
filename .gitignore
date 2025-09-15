@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Next.js build output
+.next/
+out/
+dist/
+.turbo/
+.vercel/
+
+# Coverage / reports
+coverage/
+*.lcov
+
+# Env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE/editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# REPL / npm cache
+.node_repl_history
+.npm
+
+# Pack output
+*.tgz
+# Yarn integrity
+.yarn-integrity
