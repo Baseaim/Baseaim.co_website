@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Hero from '@/components/Hero';
 import IndustryPainPoints from '@/components/IndustryPainPoints';
@@ -12,11 +13,18 @@ import { FormProvider } from '@/contexts/FormContext';
 import { useForm } from '@/contexts/FormContext';
 import FormSlider from '@/components/FormSlider';
 import ChatbotWidget from '@/components/ChatbotWidget';
+import Footer from '@/components/Footer';
+import AutomationBenefitsCard from '@/components/AutomationBenefitsCard';
 
 
 
 function HomeContent() {
   const { openForm, isFormOpen, closeForm } = useForm();
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
 
   return (
     <>
@@ -242,6 +250,12 @@ function HomeContent() {
         </div>
       </section>
 
+      {/* Automation Benefits Section */}
+      <AutomationBenefitsCard />
+
+      {/* Demo CTA Section */}
+      <DemoCTA />
+
       {/* Benefits / Features Section */}
       <section className="benefits-section py-20 bg-white">
         <div className="container mx-auto px-6">
@@ -254,8 +268,8 @@ function HomeContent() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-poppins">
-                Supercharge Your Workflow
+              <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6 font-montserrat">
+                <span className="hero-highlight">Supercharge</span><span className="text-3xl md:text-4xl"> Your Workflow</span>
               </h2>
             </motion.div>
 
@@ -388,27 +402,122 @@ function HomeContent() {
         </div>
       </section>
 
-      {/* Demo CTA Section */}
-      <DemoCTA />
-
-      {/* Footer */}
-      <footer className="bg-gray-50 border-t border-gray-200 py-12">
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <img 
-                src="/black logo .png" 
-                alt="Baseaim Logo" 
-                className="h-12 w-auto mb-2"
-              />
-              <p className="text-gray-600">Transforming local businesses with AI automation</p>
+          <div className="max-w-3xl mx-auto">
+            {/* Section Header */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4 font-montserrat">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-lg text-gray-600 font-inter">
+                Everything you need to know about our AI automation services
+              </p>
+            </motion.div>
+
+            {/* FAQ Items */}
+            <div className="divide-y divide-gray-200">
+              {[
+                {
+                  question: "How long does implementation take?",
+                  answer: "Most implementations take 2-4 weeks depending on complexity. We work closely with your team to ensure minimal disruption to your current operations while maximizing the efficiency gains."
+                },
+                {
+                  question: "What kind of support do you provide?",
+                  answer: "We offer comprehensive 24/7 support including setup assistance, training for your team, ongoing maintenance, and regular optimization reviews to ensure peak performance."
+                },
+                {
+                  question: "Can you integrate with our existing systems?",
+                  answer: "Yes! Our solutions are designed to seamlessly integrate with popular CRM systems, communication tools, and business applications. We handle all technical integration work."
+                },
+                {
+                  question: "What's the ROI on AI automation?",
+                  answer: "Our clients typically see 40-60% reduction in manual task time within the first 3 months, leading to significant cost savings and improved productivity that pays for the investment quickly."
+                },
+                {
+                  question: "Do you offer custom solutions?",
+                  answer: "Absolutely. Every business is unique, so we tailor our AI automation solutions to match your specific workflows, industry requirements, and growth objectives."
+                }
+              ].map((faq, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                  className="py-6"
+                >
+                  <button
+                    onClick={() => toggleFaq(index)}
+                    className="w-full flex justify-between items-center text-left hover:text-blue-600 transition-colors duration-200 group"
+                  >
+                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 font-montserrat pr-4">
+                      {faq.question}
+                    </h3>
+                    <div className="flex-shrink-0 ml-2">
+                      <svg
+                        className={`w-5 h-5 text-gray-400 group-hover:text-blue-600 transform transition-transform duration-200 ${
+                          openFaqIndex === index ? 'rotate-45' : ''
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                      </svg>
+                    </div>
+                  </button>
+                  
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      height: openFaqIndex === index ? 'auto' : 0,
+                      opacity: openFaqIndex === index ? 1 : 0,
+                    }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pt-4 pb-2">
+                      <p className="text-gray-600 leading-relaxed font-inter">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              ))}
             </div>
-            <div className="text-gray-500 text-sm">
-              © 2024 Baseaim. All rights reserved.
-            </div>
+
+            {/* CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-center mt-12 pt-8 border-t border-gray-200"
+            >
+              <p className="text-gray-600 mb-6 font-inter">
+                Still have questions? We're here to help.
+              </p>
+              <button
+                onClick={openForm}
+                className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-base font-medium rounded-lg transition-all duration-200 hover:scale-105 font-inter"
+              >
+                Get In Touch
+              </button>
+            </motion.div>
           </div>
         </div>
-      </footer>
+      </section>
+
+      {/* Footer */}
+      <Footer />
     </main>
     
     {/* Form Slider */}
