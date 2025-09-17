@@ -188,7 +188,7 @@ export default function ProcessTimeline() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-poppins">
+          <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-gray-900 font-montserrat">
             Our Process
           </h2>
         </motion.div>

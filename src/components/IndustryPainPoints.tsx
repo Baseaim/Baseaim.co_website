@@ -69,7 +69,7 @@ export default function IndustryPainPoints() {
             <span className="pain-points-main-text">Why most SMBs </span>
             <span className="pain-points-highlight">Stay stuck</span>
           </h2>
-          <p className="text-xl max-w-3xl mx-auto font-work-sans" style={{ color: 'var(--foreground-muted)' }}>
+          <p className="text-xl max-w-3xl mx-auto font-inter text-gray-600">
             Every day without automation, your competition gets further ahead. 
             See how AI transforms these business-critical challenges.
           </p>

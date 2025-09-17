@@ -111,13 +111,10 @@ function HomeContent() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 relative z-30">
-              <span className="pain-points-main-text">Tailored AI </span>
+              <span className="pain-points-main-text">Our AI </span>
               <span className="pain-points-highlight">Solutions</span>
             </h2>
             <div className="w-24 h-1 mx-auto mb-8" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.4))' }}></div>
-            <p className="text-xl max-w-3xl mx-auto font-inter text-black">
-              Luxury-grade AI automation services designed for businesses that demand excellence
-            </p>
           </motion.div>
 
             {/* Solutions Grid */}
@@ -142,8 +139,8 @@ function HomeContent() {
                       <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />
                     </svg>
                   </motion.div>
-                  <h3 className="text-xl font-medium text-black mb-4 font-poppins">Customer Experience Automation</h3>
-                  <p className="leading-relaxed font-inter text-sm mb-6" style={{ color: 'var(--foreground-muted)' }}>
+                  <h3 className="text-xl font-medium text-black mb-4 font-montserrat font-semibold">Customer Experience Automation</h3>
+                  <p className="leading-relaxed font-inter text-sm mb-6 text-black">
                     AI-powered chatbots, automated follow-ups, and personalized customer journeys that enhance satisfaction and drive conversions.
                   </p>
                   <div className="flex flex-wrap gap-2 justify-center">
@@ -174,8 +171,8 @@ function HomeContent() {
                       <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
                     </svg>
                   </motion.div>
-                  <h3 className="text-xl font-medium text-black mb-4 font-poppins">Operations & Workflow Intelligence</h3>
-                  <p className="leading-relaxed font-inter text-sm mb-6" style={{ color: 'var(--foreground-muted)' }}>
+                  <h3 className="text-xl font-medium text-black mb-4 font-montserrat font-semibold">Operations & Workflow Intelligence</h3>
+                  <p className="leading-relaxed font-inter text-sm mb-6 text-black">
                     Streamline processes with intelligent automation, data synchronization, and smart task routing that eliminates bottlenecks.
                   </p>
                   <div className="flex flex-wrap gap-2 justify-center">
@@ -206,8 +203,8 @@ function HomeContent() {
                       <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                   </motion.div>
-                  <h3 className="text-xl font-medium text-black mb-4 font-poppins">Growth & Analytics Solutions</h3>
-                  <p className="leading-relaxed font-inter text-sm mb-6" style={{ color: 'var(--foreground-muted)' }}>
+                  <h3 className="text-xl font-medium text-black mb-4 font-montserrat font-semibold">Growth & Analytics Solutions</h3>
+                  <p className="leading-relaxed font-inter text-sm mb-6 text-black">
                     Predictive insights, lead scoring, and performance analytics that identify opportunities and optimize your growth strategy.
                   </p>
                   <div className="flex flex-wrap gap-2 justify-center">

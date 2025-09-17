@@ -70,7 +70,7 @@ function AnimatedBar({ label, targetHeight, color, bgColor, hasRevealed, delay =
   return (
     <div className="flex flex-col items-center">
       {/* Bar Container */}
-      <div className={`relative w-[96px] md:w-[112px] ${containerHeight} ${bgColor} rounded-xl border border-gray-300 overflow-hidden`}>
+      <div className={`relative w-[96px] md:w-[112px] ${containerHeight} ${bgColor} rounded-xl border border-blue-300 overflow-hidden`}>
         {/* Animated Bar */}
         <div 
           className={`absolute bottom-0 left-0 right-0 ${color} rounded-xl opacity-0 scale-y-0`}

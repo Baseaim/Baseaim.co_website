@@ -109,7 +109,7 @@ export default function DemoCTA() {
               </div>
               
               {/* Heading */}
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 font-poppins">
+              <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-2 font-montserrat">
                 Try it for yourself!
               </h2>
               

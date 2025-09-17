@@ -122,13 +122,13 @@ export default function ProcessSteps({
               onMouseEnter={() => shouldAutoCycle && setActiveStep(index)}
             >
               <div className="mb-6">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-600 text-white text-xl font-bold font-poppins">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-600 text-white text-xl font-bold font-montserrat">
                   {step.number}
                 </div>
               </div>
 
               <div>
-                <h3 className="text-xl lg:text-2xl font-semibold text-gray-900 mb-4 font-poppins">
+                <h3 className="text-xl lg:text-2xl font-semibold text-gray-900 mb-4 font-montserrat">
                   {step.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed font-inter">
