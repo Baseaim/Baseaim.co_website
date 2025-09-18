@@ -21,6 +21,7 @@ import AutomationBenefitsCard from '@/components/AutomationBenefitsCard';
 function HomeContent() {
   const { openForm, isFormOpen, closeForm } = useForm();
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
@@ -80,7 +81,7 @@ function HomeContent() {
             <div className="md:hidden">
               <button 
                 className="text-gray-700 hover:text-blue-600 focus:outline-none"
-                onClick={() => {/* Mobile menu toggle logic */}}
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -90,6 +91,70 @@ function HomeContent() {
           </div>
         </div>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-40 md:hidden"
+        >
+          <div className="fixed inset-0 bg-black bg-opacity-30" onClick={() => setMobileMenuOpen(false)}></div>
+          <motion.div 
+            initial={{ y: "-100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-100%" }}
+            transition={{ type: "tween", duration: 0.3, ease: "easeOut" }}
+            className="fixed top-16 left-0 w-full bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200"
+          >
+            <div className="p-6">
+              {/* Mobile Navigation Links */}
+              <nav className="space-y-4">
+                <a 
+                  href="#how-it-works" 
+                  className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  How It Works
+                </a>
+                <a 
+                  href="#services" 
+                  className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Solutions
+                </a>
+                <a 
+                  href="/case-studies" 
+                  className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Case Studies
+                </a>
+                <a 
+                  href="#contact" 
+                  className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Contact
+                </a>
+                
+                {/* Mobile CTA Button */}
+                <button 
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition-colors duration-200 mt-6"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    openForm();
+                  }}
+                >
+                  Get In Touch
+                </button>
+              </nav>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
       
       {/* Premium Gradient Hero Section */}
       <Hero />
