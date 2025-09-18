@@ -72,16 +72,28 @@ export default function ContactForm({ onClose }: ContactFormProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) return;
 
     setIsSubmitting(true);
-    
-    // Simulate form submission
+
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to submit form');
+      }
+
       setIsSubmitted(true);
-      
+
       // Auto-close after success
       setTimeout(() => {
         onClose();
@@ -94,6 +106,9 @@ export default function ContactForm({ onClose }: ContactFormProps) {
       }, 2000);
     } catch (error) {
       console.error('Form submission error:', error);
+      setErrors({
+        message: error instanceof Error ? error.message : 'Failed to submit form. Please try again.'
+      });
     } finally {
       setIsSubmitting(false);
     }
