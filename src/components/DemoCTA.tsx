@@ -110,12 +110,12 @@ export default function DemoCTA() {
               
               {/* Heading */}
               <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-2 font-montserrat">
-                Try it for yourself!
+                Put your details here
               </h2>
               
               {/* Subheading */}
               <p className="text-gray-600 font-inter">
-                To receive a demo call.
+                to get your automation blueprint
               </p>
             </div>
 

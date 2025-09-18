@@ -10,18 +10,23 @@ interface ProcessStepsProps {
 const steps = [
   {
     number: "1",
-    title: "Discovery & Strategy",
-    body: "We'll identify your business goals, analyze communication challenges, and find inefficiencies to wireframe a tailored solution for your needs"
+    title: "Discover & Analyze",
+    body: "We identify inefficiencies in your current processes and pinpoint exactly where AI can deliver the biggest impact"
   },
   {
-    number: "2", 
-    title: "Creation & Launch",
-    body: "We'll develop, test and integrate a custom AI Voice Agent that seamlessly integrates with your existing systems and workflows"
+    number: "2",
+    title: "AI Blueprint",
+    body: "We design a comprehensive AI roadmap tailored to your business, ensuring every automation delivers maximum value"
   },
   {
-    number: "3",
-    title: "Optimize", 
-    body: "We'll monitor, adjust and optimise your AI Voice Agent based on real-world data, ensuring consistent performance and outstanding results for your business"
+    number: "3", 
+    title: "Build & Implement",
+    body: "We develop and implement your custom AI solutions, seamlessly integrating them into your existing workflow"
+  },
+  {
+    number: "4",
+    title: "Refine & Optimize", 
+    body: "We continuously fine-tune your AI systems to ensure they're running at full capacity and delivering peak performance"
   }
 ];
 
@@ -78,7 +83,8 @@ export default function ProcessSteps({
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-white/10 to-white/20 rounded-full blur-3xl opacity-60" />
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      {/* Header Section - Constrained */}
+      <div className="max-w-12xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -98,40 +104,45 @@ export default function ProcessSteps({
 
             {/* Subheading */}
             <p className="text-xl text-gray-600 max-w-2xl mx-auto font-inter">
-              A simple, three step process to make your life easier.
+              A simple, four step process to make your life easier.
             </p>
         </motion.div>
+      </div>
 
+      {/* Cards Section - Extended Width */}
+      <div className="w-full px-8 relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-7"
         >
           {steps.map((step, index) => (
             <motion.div
               key={index}
               variants={cardVariants}
               className={`
-                relative bg-blue-50/50 rounded-2xl p-8 border border-blue-100/50 shadow-sm
+                relative bg-blue-50/50 rounded-2xl px-12 py-8 border border-blue-100/50 shadow-sm
                 transition-all duration-500 ease-out
                 hover:shadow-md hover:-translate-y-1 hover:ring-2 hover:ring-blue-500/20
                 ${activeStep === index && shouldAutoCycle ? 'ring-2 ring-blue-500/30 shadow-lg' : ''}
               `}
               onMouseEnter={() => shouldAutoCycle && setActiveStep(index)}
             >
-              <div className="mb-6">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-600 text-white text-xl font-bold font-montserrat">
+              <div>
+                {/* Step Number */}
+                <div className="text-4xl font-bold text-gray-900 mb-3 font-montserrat">
                   {step.number}
                 </div>
-              </div>
-
-              <div>
-                <h3 className="text-xl lg:text-2xl font-semibold text-gray-900 mb-4 font-montserrat">
+                
+                {/* Step Title */}
+                <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4 font-montserrat">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed font-inter">
+                
+                {/* Step Description */}
+                <p className="text-sm text-gray-600 leading-snug font-inter">
                   {step.body}
                 </p>
               </div>
@@ -147,8 +158,10 @@ export default function ProcessSteps({
             </motion.div>
           ))}
         </motion.div>
+      </div>
 
-        {shouldAutoCycle && (
+      {shouldAutoCycle && (
+        <div className="max-w-12xl mx-auto relative z-10">
           <div className="flex justify-center mt-12 space-x-2">
             {steps.map((_, index) => (
               <button
@@ -162,8 +175,8 @@ export default function ProcessSteps({
               />
             ))}
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }

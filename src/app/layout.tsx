@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Poppins, Work_Sans, Montserrat, DM_Serif_Display } from 'next/font/google'
 import './globals.css'
+import StructuredData from '@/components/StructuredData'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -44,9 +45,22 @@ export const viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Baseaim - Tailored AI Automation Solutions',
-  description: 'Transform your business with AI automation, intelligence, and innovation. We build premium AI solutions that eliminate repetitive work and accelerate growth.',
-  keywords: ['AI automation', 'business intelligence', 'workflow automation', 'AI solutions', 'digital transformation'],
+  title: 'AI Automation Services | Custom AI Solutions for Business Growth | Baseaim',
+  description: 'Leading AI automation company specializing in custom AI solutions, business process automation, and intelligent workflow optimization. Increase efficiency by 300%+ with our proven AI services.',
+  keywords: [
+    'AI automation services', 
+    'custom AI solutions', 
+    'business process automation',
+    'AI consulting',
+    'machine learning services',
+    'enterprise AI',
+    'AI implementation',
+    'business automation',
+    'workflow automation',
+    'intelligent automation',
+    'AI development company',
+    'business intelligence automation'
+  ],
   authors: [{ name: 'Baseaim' }],
   creator: 'Baseaim',
   publisher: 'Baseaim',
@@ -56,18 +70,27 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: 'Baseaim - Tailored AI Automation Solutions',
-    description: 'Transform your business with AI automation, intelligence, and innovation.',
+    title: 'AI Automation Services | Custom AI Solutions for Business Growth | Baseaim',
+    description: 'Leading AI automation company specializing in custom AI solutions, business process automation, and intelligent workflow optimization. Increase efficiency by 300%+ with our proven AI services.',
     url: 'https://baseaim.com',
     siteName: 'Baseaim',
     type: 'website',
     locale: 'en_US',
+    images: [
+      {
+        url: 'https://baseaim.com/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Baseaim AI Automation Services - Custom AI Solutions for Business Growth',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Baseaim - Tailored AI Automation Solutions',
-    description: 'Transform your business with AI automation, intelligence, and innovation.',
+    title: 'AI Automation Services | Custom AI Solutions for Business Growth | Baseaim',
+    description: 'Leading AI automation company specializing in custom AI solutions, business process automation, and intelligent workflow optimization. Increase efficiency by 300%+ with our proven AI services.',
     creator: '@baseaim',
+    images: ['https://baseaim.com/twitter-image.jpg'],
   },
   robots: {
     index: true,
@@ -98,6 +121,9 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#2563eb" />
       </head>
       <body className={`${inter.className} antialiased`}>
+        <StructuredData type="organization" />
+        <StructuredData type="service" />
+        <StructuredData type="faq" />
         <div id="root">{children}</div>
       </body>
     </html>

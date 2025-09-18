@@ -28,9 +28,9 @@ function HomeContent() {
 
   return (
     <>
-    <main className="min-h-screen text-gray-900 font-inter bg-white">
+    <main className="min-h-screen text-gray-900 font-inter bg-white" role="main">
       {/* Navigation Bar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent" role="navigation" aria-label="Main navigation">
         <div className="w-full px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -45,22 +45,28 @@ function HomeContent() {
             {/* Right Side - Navigation Links + CTA */}
             <div className="hidden md:flex items-center space-x-6">
               <a 
-                href="#about" 
+                href="#how-it-works" 
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
               >
-                About Us
+                How It Works
               </a>
               <a 
-                href="/services" 
+                href="#services" 
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
               >
-                Services
+                Solutions
               </a>
               <a 
-                href="#portfolio" 
+                href="/case-studies" 
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
               >
-                Portfolio
+                Case Studies
+              </a>
+              <a 
+                href="#contact" 
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+              >
+                Contact
               </a>
               <button 
                 className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
@@ -95,7 +101,7 @@ function HomeContent() {
       <MetricsBar />
 
       {/* Premium Services Section */}
-      <section id="services" className="py-20 relative solutions-section">
+      <section id="services" className="py-20 relative solutions-section" aria-labelledby="services-heading">
         {/* Continue Hero Gradient Background */}
         <GradientBG />
         
@@ -110,7 +116,7 @@ function HomeContent() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 relative z-30">
+            <h2 id="services-heading" className="text-4xl md:text-5xl font-bold mb-6 relative z-30">
               <span className="pain-points-main-text">Our AI </span>
               <span className="pain-points-highlight">Solutions</span>
             </h2>
@@ -176,9 +182,9 @@ function HomeContent() {
                     Streamline processes with intelligent automation, data synchronization, and smart task routing that eliminates bottlenecks.
                   </p>
                   <div className="flex flex-wrap gap-2 justify-center">
-                    <span className="px-3 py-1 text-xs rounded-full border border-cyan-400/20 text-cyan-300 bg-cyan-400/5">Process Automation</span>
-                    <span className="px-3 py-1 text-xs rounded-full border border-cyan-400/20 text-cyan-300 bg-cyan-400/5">Data Integration</span>
-                    <span className="px-3 py-1 text-xs rounded-full border border-cyan-400/20 text-cyan-300 bg-cyan-400/5">Smart Routing</span>
+                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Process Automation</span>
+                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Data Integration</span>
+                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Smart Routing</span>
                   </div>
                 </div>
               </motion.div>
@@ -208,9 +214,9 @@ function HomeContent() {
                     Predictive insights, lead scoring, and performance analytics that identify opportunities and optimize your growth strategy.
                   </p>
                   <div className="flex flex-wrap gap-2 justify-center">
-                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/20 text-blue-300 bg-blue-400/5">Predictive Analytics</span>
-                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/20 text-blue-300 bg-blue-400/5">Lead Scoring</span>
-                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/20 text-blue-300 bg-blue-400/5">Growth Insights</span>
+                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Predictive Analytics</span>
+                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Lead Scoring</span>
+                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Growth Insights</span>
                   </div>
                 </div>
               </motion.div>
@@ -232,11 +238,11 @@ function HomeContent() {
               </button>
             </motion.div>
 
-            {/* Process Steps */}
-            <div className="mt-32">
-              <ProcessSteps />
-            </div>
+          </div>
 
+          {/* Process Steps - Outside max-w constraint but inside section */}
+          <div id="how-it-works" className="mt-32">
+            <ProcessSteps />
           </div>
         </div>
 
@@ -251,7 +257,9 @@ function HomeContent() {
       <AutomationBenefitsCard />
 
       {/* Demo CTA Section */}
-      <DemoCTA />
+      <div id="contact">
+        <DemoCTA />
+      </div>
 
       {/* Benefits / Features Section */}
       <section className="benefits-section py-20 bg-white">

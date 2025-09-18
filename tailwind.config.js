@@ -18,6 +18,13 @@ module.exports = {
         foreground: 'var(--foreground)',
         'foreground-muted': 'var(--foreground-muted)',
       },
+      spacing: {
+        '15.25': '3.8125rem', // 61px
+        '15.5': '3.875rem', // 62px
+      },
+      maxWidth: {
+        '12xl': '144rem', // 2304px
+      },
       animation: {
         'float': 'float 20s infinite linear',
         'noise': 'noise 8s infinite linear',
