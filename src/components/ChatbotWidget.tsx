@@ -1,12 +1,34 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useForm } from '@/contexts/FormContext';
+import Image from 'next/image';
+
+interface Message {
+  id: string;
+  text: string;
+  sender: 'user' | 'bot';
+  timestamp: Date;
+}
 
 export default function ChatbotWidget() {
   const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      id: '1',
+      text: 'Hi! 👋 Welcome to Baseaim. How can I help you today?',
+      sender: 'bot',
+      timestamp: new Date()
+    }
+  ]);
+  const [inputValue, setInputValue] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [sessionId] = useState(() => `session-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
   const { openForm } = useForm();
+
+  const WEBHOOK_URL = 'https://n8n.ryderagency.com/webhook/80174bb5-5ca5-43ec-bf4d-c0a2c90e052f/chat';
 
   // Check for reduced motion preference
   const prefersReducedMotion = typeof window !== 'undefined' 
@@ -24,6 +46,90 @@ export default function ChatbotWidget() {
   const handleGetStarted = () => {
     closeChat();
     openForm();
+  };
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  const sendMessage = async (text: string) => {
+    if (!text.trim() || isLoading) return;
+
+    const userMessage: Message = {
+      id: `user-${Date.now()}`,
+      text: text.trim(),
+      sender: 'user',
+      timestamp: new Date()
+    };
+
+    setMessages(prev => [...prev, userMessage]);
+    setInputValue('');
+    setIsLoading(true);
+
+    try {
+      const response = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          sessionId,
+          chatInput: text.trim(),
+          action: 'sendMessage'
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      const data = await response.json();
+
+      const botMessage: Message = {
+        id: `bot-${Date.now()}`,
+        text: data.output || data.text || 'I apologize, but I encountered an issue. Please try again.',
+        sender: 'bot',
+        timestamp: new Date()
+      };
+
+      setMessages(prev => [...prev, botMessage]);
+
+      // Check if bot suggests booking a consultation
+      if (botMessage.text.toLowerCase().includes('consultation') ||
+          botMessage.text.toLowerCase().includes('schedule') ||
+          botMessage.text.toLowerCase().includes('get started')) {
+        // Show Get Started button after a delay
+        setTimeout(() => {
+          const ctaMessage: Message = {
+            id: `cta-${Date.now()}`,
+            text: 'SHOW_CTA',
+            sender: 'bot',
+            timestamp: new Date()
+          };
+          setMessages(prev => [...prev, ctaMessage]);
+        }, 1000);
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      const errorMessage: Message = {
+        id: `error-${Date.now()}`,
+        text: 'Sorry, I couldn\'t send your message. Please try again.',
+        sender: 'bot',
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    sendMessage(inputValue);
   };
 
   // Handle click outside to close
@@ -151,84 +257,102 @@ export default function ChatbotWidget() {
 
               {/* Chat Messages */}
               <div className="chat-messages">
-                <div className="message bot-message">
-                  <div className="message-avatar">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                      <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2"/>
-                      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" strokeWidth="2"/>
-                    </svg>
-                  </div>
-                  <div className="message-content">
-                    <p>Hi! 👋 Welcome to Baseaim. How can I help you today?</p>
-                  </div>
-                </div>
-
-                <div className="message user-message">
-                  <div className="message-content">
-                    <p>I'm interested in AI automation for my business</p>
-                  </div>
-                </div>
-
-                <div className="message bot-message">
-                  <div className="message-avatar">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                      <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2"/>
-                      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" strokeWidth="2"/>
-                    </svg>
-                  </div>
-                  <div className="message-content">
-                    <p>Great! We specialize in AI automation solutions. What specific areas are you looking to improve?</p>
-                    <div className="message-options">
-                      <span className="option">• Customer Experience</span>
-                      <span className="option">• Operations & Workflow</span>
-                      <span className="option">• Growth & Analytics</span>
+                {messages.map((message) => (
+                  message.text === 'SHOW_CTA' ? (
+                    <div key={message.id} className="message bot-message">
+                      <div className="message-avatar">
+                        <Image
+                          src="../BASEAIM BLACK.png"
+                          alt="Baseaim"
+                          width={24}
+                          height={24}
+                        />
+                      </div>
+                      <div className="message-content">
+                        <button
+                          className="chat-cta-button"
+                          onClick={handleGetStarted}
+                        >
+                          Get Started - Schedule a Consultation
+                        </button>
+                      </div>
+                    </div>
+                  ) : (
+                    <div key={message.id} className={`message ${message.sender === 'user' ? 'user-message' : 'bot-message'}`}>
+                      {message.sender === 'bot' && (
+                        <div className="message-avatar">
+                          <Image
+                            src="../BASEAIM BLACK.png"
+                            alt="Baseaim"
+                            width={24}
+                            height={24}
+                          />
+                        </div>
+                      )}
+                      <div className="message-content">
+                        <p>{message.text}</p>
+                      </div>
+                    </div>
+                  )
+                ))}
+                {isLoading && (
+                  <div className="message bot-message">
+                    <div className="message-avatar">
+                      <Image
+                        src="/black logo .png"
+                        alt="Baseaim"
+                        width={24}
+                        height={24}
+                      />
+                    </div>
+                    <div className="message-content">
+                      <div className="typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
                     </div>
                   </div>
-                </div>
-
-                <div className="message bot-message">
-                  <div className="message-avatar">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                      <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2"/>
-                      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" strokeWidth="2"/>
-                    </svg>
-                  </div>
-                  <div className="message-content">
-                    <p>Perfect! Would you like to schedule a free consultation to discuss your specific needs?</p>
-                    <button 
-                      className="chat-cta-button"
-                      onClick={handleGetStarted}
-                    >
-                      Get Started
-                    </button>
-                  </div>
-                </div>
+                )}
+                <div ref={messagesEndRef} />
               </div>
 
               {/* Chat Input */}
               <div className="chat-input-container">
-                <div className="chat-input-wrapper">
-                  <input 
+                <form onSubmit={handleSubmit} className="chat-input-wrapper">
+                  <input
                     type="text"
                     placeholder="Type your message..."
                     className="chat-input"
-                    disabled
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                    disabled={isLoading}
                   />
-                  <button className="chat-send-button" disabled>
+                  <button
+                    type="submit"
+                    className="chat-send-button"
+                    disabled={!inputValue.trim() || isLoading}
+                  >
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                      <path 
-                        d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
+                      <path
+                        d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
                         strokeLinejoin="round"
                       />
                     </svg>
                   </button>
+                </form>
+                <div className="chat-disclaimer">
+                  <Image
+                    src="/black logo .png"
+                    alt="Baseaim"
+                    width={32}
+                    height={32}
+                  />
+                  <span>Powered by Baseaim AI</span>
                 </div>
-                <p className="chat-disclaimer">
-                  Click "Get Started" above to connect with our team
-                </p>
               </div>
             </motion.div>
           </div>
