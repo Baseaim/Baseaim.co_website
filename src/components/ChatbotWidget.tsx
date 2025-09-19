@@ -299,7 +299,7 @@ export default function ChatbotWidget() {
                   <div className="message bot-message">
                     <div className="message-avatar">
                       <Image
-                        src="/black logo .png"
+                        src="../BASEAIM BLACK.png"
                         alt="Baseaim"
                         width={24}
                         height={24}
