@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Poppins, Work_Sans, Montserrat, DM_Serif_Display } from 'next/font/google'
 import './globals.css'
 import StructuredData from '@/components/StructuredData'
+import GoogleTagManager from '@/components/GoogleTagManager'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -121,6 +122,15 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#2563eb" />
       </head>
       <body className={`${inter.className} antialiased`}>
+        <GoogleTagManager gtmId="GTM-KPFQFFKJ" />
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KPFQFFKJ"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         <StructuredData type="organization" />
         <StructuredData type="service" />
         <StructuredData type="faq" />
