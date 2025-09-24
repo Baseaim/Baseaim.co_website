@@ -86,9 +86,9 @@ const Hero = () => {
               >
                 Get Started Today
               </button>
-              <button className="hero-cta-secondary">
-                View Case Studies
-              </button>
+              <a href="/about-us" className="hero-cta-secondary">
+                About Us
+              </a>
             </motion.div>
           </div>
         </div>

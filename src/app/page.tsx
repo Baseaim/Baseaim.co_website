@@ -58,10 +58,10 @@ function HomeContent() {
                 Solutions
               </a>
               <a 
-                href="/case-studies" 
+                href="/about-us" 
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
               >
-                Case Studies
+                About Us
               </a>
               <a 
                 href="#contact" 
@@ -126,11 +126,11 @@ function HomeContent() {
                   Solutions
                 </a>
                 <a 
-                  href="/case-studies" 
+                  href="/about-us" 
                   className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Case Studies
+                  About Us
                 </a>
                 <a 
                   href="#contact" 
