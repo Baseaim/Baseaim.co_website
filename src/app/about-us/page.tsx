@@ -128,7 +128,7 @@ function AboutUsContent() {
         {/* Values Section */}
         <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
           <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-screen-2xl mx-auto px-4 lg:px-8 xl:px-12">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -229,8 +229,8 @@ function AboutUsContent() {
               <div className="grid md:grid-cols-3 gap-8">
                 {[
                   {
-                    name: "Founder Name 1",
-                    position: "CEO & Co-Founder",
+                    name: "Khan Kim",
+                    position: "COO & Co-Founder",
                     image: "/api/placeholder/300/300",
                     socials: {
                       linkedin: "#",
@@ -247,8 +247,8 @@ function AboutUsContent() {
                     }
                   },
                   {
-                    name: "Founder Name 3",
-                    position: "COO & Co-Founder",
+                    name: "Sora Nakayama",
+                    position: "CGO & Co-Founder",
                     image: "/linked in profile pic.png",
                     socials: {
                       linkedin: "#",
@@ -325,7 +325,7 @@ function AboutUsContent() {
         {/* What Makes Us Different Section */}
         <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
           <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-screen-2xl mx-auto px-4 lg:px-8 xl:px-12">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}

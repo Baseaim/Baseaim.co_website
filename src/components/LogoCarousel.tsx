@@ -32,7 +32,7 @@ const LogoCarousel = () => {
                   className="carousel-logo"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling!.style.display = 'block';
+                    (e.currentTarget.nextElementSibling as HTMLElement)!.style.display = 'block';
                   }}
                 />
                 <span className="brand-name carousel-logo-fallback">{brand.name}</span>
@@ -49,7 +49,7 @@ const LogoCarousel = () => {
                   className="carousel-logo"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling!.style.display = 'block';
+                    (e.currentTarget.nextElementSibling as HTMLElement)!.style.display = 'block';
                   }}
                 />
                 <span className="brand-name carousel-logo-fallback">{brand.name}</span>
