@@ -78,7 +78,7 @@ function AboutUsContent() {
                 transition={{ duration: 0.8 }}
               >
                 <h1 className="hero-headline">
-                  About <span className="hero-highlight">Baseaim</span>
+                  <span className="about-text">About</span> <span className="hero-highlight">Baseaim</span>
                 </h1>
                 <p className="hero-subheadline">
                   We're on a mission to help businesses thrive through intelligent AI automation.
@@ -89,7 +89,7 @@ function AboutUsContent() {
         </section>
 
         {/* Mission Section */}
-        <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <section className="py-20 bg-white">
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
               <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -100,7 +100,7 @@ function AboutUsContent() {
                   viewport={{ once: true }}
                 >
                   <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-6 font-montserrat">
-                    Our Mission
+                    Our <span className="values-text">Mission</span>
                   </h2>
                   <p className="text-xl md:text-2xl text-gray-800 leading-relaxed font-inter font-medium mb-8">
                     At <span className="gradient-text-inline">BaseAim</span>, our mission is to lead at the forefront of the <span className="gradient-text-inline">AI revolution</span>. We help businesses harness the power of this AI gold rush — not with cookie-cutter strategies, but with long-term infrastructure built for growth and scale. We believe in true partnership, connecting our AI expertise with your vision to unlock measurable results.
@@ -126,7 +126,7 @@ function AboutUsContent() {
         </section>
 
         {/* Values Section */}
-        <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <section className="py-20 bg-white">
           <div className="container mx-auto px-6">
             <div className="max-w-screen-2xl mx-auto px-4 lg:px-8 xl:px-12">
               <motion.div
@@ -323,7 +323,7 @@ function AboutUsContent() {
         </section>
 
         {/* What Makes Us Different Section */}
-        <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <section className="py-20 bg-white">
           <div className="container mx-auto px-6">
             <div className="max-w-screen-2xl mx-auto px-4 lg:px-8 xl:px-12">
               <motion.div
@@ -334,7 +334,7 @@ function AboutUsContent() {
                 className="text-center mb-16"
               >
                 <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-6 font-montserrat">
-                  What Makes Us <span className="text-blue-600">Different</span>
+                  What Makes Us <span className="different-text">Different</span>
                 </h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto font-inter">
                   We don't just deliver solutions—we build partnerships that drive real, measurable growth

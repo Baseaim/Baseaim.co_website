@@ -210,14 +210,14 @@ function HomeContent() {
                       <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />
                     </svg>
                   </motion.div>
-                  <h3 className="text-xl font-medium text-black mb-4 font-montserrat font-semibold">Customer Experience Automation</h3>
+                  <h3 className="text-xl font-medium text-black mb-4 font-montserrat font-semibold">AI Agent Integration</h3>
                   <p className="leading-relaxed font-inter text-sm mb-6 text-black">
-                    AI-powered chatbots, automated follow-ups, and personalized customer journeys that enhance satisfaction and drive conversions.
+                    Deploy intelligent AI agents that seamlessly integrate with your existing systems, handling complex tasks and decision-making processes autonomously.
                   </p>
                   <div className="flex flex-wrap gap-2 justify-center">
-                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">24/7 Support</span>
-                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Lead Qualification</span>
-                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Personalization</span>
+                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Smart Agents</span>
+                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">System Integration</span>
+                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Task Automation</span>
                   </div>
                 </div>
               </motion.div>
@@ -242,14 +242,14 @@ function HomeContent() {
                       <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
                     </svg>
                   </motion.div>
-                  <h3 className="text-xl font-medium text-black mb-4 font-montserrat font-semibold">Operations & Workflow Intelligence</h3>
+                  <h3 className="text-xl font-medium text-black mb-4 font-montserrat font-semibold">Workflow Automation</h3>
                   <p className="leading-relaxed font-inter text-sm mb-6 text-black">
-                    Streamline processes with intelligent automation, data synchronization, and smart task routing that eliminates bottlenecks.
+                    Transform manual processes into intelligent automated workflows that reduce errors, save time, and scale with your business growth.
                   </p>
                   <div className="flex flex-wrap gap-2 justify-center">
-                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Process Automation</span>
-                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Data Integration</span>
-                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Smart Routing</span>
+                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Process Design</span>
+                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Error Reduction</span>
+                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Scalable Systems</span>
                   </div>
                 </div>
               </motion.div>
@@ -274,14 +274,14 @@ function HomeContent() {
                       <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                   </motion.div>
-                  <h3 className="text-xl font-medium text-black mb-4 font-montserrat font-semibold">Growth & Analytics Solutions</h3>
+                  <h3 className="text-xl font-medium text-black mb-4 font-montserrat font-semibold">AI Consulting</h3>
                   <p className="leading-relaxed font-inter text-sm mb-6 text-black">
-                    Predictive insights, lead scoring, and performance analytics that identify opportunities and optimize your growth strategy.
+                    Strategic guidance and expert consultation to identify AI opportunities, develop implementation roadmaps, and maximize your return on AI investments.
                   </p>
                   <div className="flex flex-wrap gap-2 justify-center">
-                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Predictive Analytics</span>
-                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Lead Scoring</span>
-                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Growth Insights</span>
+                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Strategy Planning</span>
+                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">ROI Optimization</span>
+                    <span className="px-3 py-1 text-xs rounded-full border border-blue-400/30 text-blue-600 bg-blue-50">Expert Guidance</span>
                   </div>
                 </div>
               </motion.div>

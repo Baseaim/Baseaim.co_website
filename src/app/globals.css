@@ -157,6 +157,33 @@ body {
   font-weight: inherit;
 }
 
+/* DM Serif Display styling with gradient for "Different" text */
+.different-text {
+  font-family: var(--font-dm-serif-display), serif;
+  font-style: italic;
+  font-weight: 400;
+  background: linear-gradient(135deg, #87CEEB, #0052CC, #0066FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* DM Serif Display styling with gradient for "Values" text */
+.values-text {
+  font-family: var(--font-dm-serif-display), serif;
+  font-style: italic;
+  font-weight: 400;
+  background: linear-gradient(135deg, #87CEEB, #0052CC, #0066FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Slightly smaller text for "About" in hero */
+.about-text {
+  font-size: 0.9em;
+}
+
 .morphing-text {
   position: relative;
   display: inline-block;
