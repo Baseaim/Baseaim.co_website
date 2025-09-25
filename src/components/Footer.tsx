@@ -1,10 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useForm } from '@/contexts/FormContext';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const { openForm } = useForm();
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -220,7 +222,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2 mt-4 justify-center lg:justify-start">
                 <button
-                  onClick={() => document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={openForm}
                   className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-medium rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-200 font-inter"
                 >
                   Get Started
