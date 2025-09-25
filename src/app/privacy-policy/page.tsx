@@ -295,7 +295,7 @@ function PrivacyPolicyContent() {
 
       <Footer />
       <ChatbotWidget />
-      {isFormOpen && <FormSlider onClose={closeForm} />}
+      {isFormOpen && <FormSlider isOpen={isFormOpen} onClose={closeForm} />}
     </>
   );
 }
