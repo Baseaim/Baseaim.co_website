@@ -239,11 +239,11 @@ function AboutUsContent() {
                     }
                   },
                   {
-                    name: "Founder Name 2",
-                    position: "CTO & Co-Founder",
+                    name: "Eden Ryder Lee",
+                    position: "CTO & Founder",
                     image: "/WhatsApp Image 2025-09-24 at 16.04.57.jpeg",
                     socials: {
-                      linkedin: "#",
+                      linkedin: "https://www.linkedin.com/in/eden-lee-6016a4300/",
                       twitter: "#",
                     }
                   },
