@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import GradientBG from './GradientBG';
+import PillBox from './PillBox';
+import LogoCarousel from './LogoCarousel';
 import { useForm } from '@/contexts/FormContext';
 
 const Hero = () => {
@@ -26,6 +28,7 @@ const Hero = () => {
       <div className="hero-content">
         <div className="hero-container">
           <div className="hero-text-wrapper">
+            <PillBox />
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -80,19 +83,41 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="hero-cta-wrapper"
             >
-              <button 
+              <motion.button 
                 className="hero-cta-primary"
                 onClick={openForm}
+                initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 12px 35px rgba(37, 99, 235, 0.4)"
+                }}
+                whileTap={{ scale: 0.95 }}
               >
                 Get Started Today
-              </button>
-              <a href="/about-us" className="hero-cta-secondary">
+              </motion.button>
+              <motion.a 
+                href="/about-us" 
+                className="hero-cta-secondary"
+                initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+                whileHover={{ 
+                  scale: 1.05,
+                  borderColor: "rgba(37, 99, 235, 0.4)"
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
                 About Us
-              </a>
+              </motion.a>
             </motion.div>
           </div>
         </div>
       </div>
+      
+      {/* Logo Carousel */}
+      <LogoCarousel />
       
       <div className="hero-scroll-text">
         Scroll down to discover more

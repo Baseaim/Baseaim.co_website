@@ -80,9 +80,10 @@ body {
   position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   overflow: hidden;
+  padding-top: 11rem;
 }
 
 .hero-content {
@@ -193,11 +194,11 @@ body {
   font-size: 1.25rem;
   line-height: 1.7;
   color: rgba(66, 66, 66, 0.7);
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
@@ -208,50 +209,55 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .hero-cta-primary {
   background: linear-gradient(135deg, #2563eb, #3b82f6);
   color: white;
-  border: none;
+  border: 1px solid rgba(37, 99, 235, 0.3);
   padding: 1rem 2rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  border-radius: 0.3rem;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: 'Inter', sans-serif;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
 }
 
 .hero-cta-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+  transform: translateY(-1px);
+  border-color: rgba(37, 99, 235, 0.5);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
 }
 
 .hero-cta-secondary {
-  background: transparent;
-  color: #000000;
-  border: 2px solid rgba(37, 99, 235, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  color: #1f2937;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 1rem 2rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  border-radius: 0.3rem;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: 'Inter', sans-serif;
 }
 
 .hero-cta-secondary:hover {
-  border-color: #2563eb;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(37, 99, 235, 0.3);
   color: #2563eb;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .hero-scroll-text {
   position: absolute;
-  bottom: 2rem;
+  bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
   font-size: 0.9rem;
@@ -849,7 +855,7 @@ body {
 .stat-text-horizontal {
   font-size: 1rem;
   color: var(--foreground-muted);
-  font-family: 'Inter', sans-serif;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
   font-weight: 500;
   line-height: 1.4;
   margin-bottom: 0.5rem;
@@ -858,7 +864,7 @@ body {
 .stat-opportunity {
   font-size: 0.9rem;
   color: #10B981;
-  font-family: 'Inter', sans-serif;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
   font-weight: 600;
   line-height: 1.3;
   margin-top: 0.5rem;
@@ -2295,6 +2301,216 @@ body {
   }
 }
 
+/* Logo Carousel Styles */
+.logo-carousel-container {
+  position: absolute;
+  bottom: 4rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  z-index: 10;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.logo-carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.logo-carousel-track {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  animation: scroll-infinite 35s linear infinite;
+  width: calc(200% + 2rem);
+}
+
+
+.logo-card {
+  flex-shrink: 0;
+  width: 140px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.logo-card:hover {
+  background: transparent;
+}
+
+.logo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+
+.brand-name {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 0.025em;
+}
+
+.carousel-logo {
+  max-height: 40px;
+  max-width: 100px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: grayscale(20%) opacity(0.8);
+}
+
+.logo-card:hover .carousel-logo {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.05);
+}
+
+.carousel-logo-fallback {
+  display: none;
+}
+
+.carousel-fade-left,
+.carousel-fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.carousel-fade-left {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.8) 30%,
+    transparent 100%
+  );
+}
+
+.carousel-fade-right {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.8) 30%,
+    transparent 100%
+  );
+}
+
+@keyframes scroll-infinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive adjustments for logo carousel */
+@media (max-width: 1024px) {
+  .logo-carousel-container {
+    max-width: 600px;
+  }
+  
+  .logo-card {
+    width: 120px;
+    height: 70px;
+  }
+  
+  .brand-name {
+    font-size: 13px;
+  }
+  
+  .logo-carousel-track {
+    gap: 1.5rem;
+    width: calc(200% + 1.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-carousel-container {
+    max-width: 500px;
+    padding: 0 1rem;
+    bottom: 3rem;
+  }
+  
+  .logo-card {
+    width: 100px;
+    height: 60px;
+  }
+  
+  .brand-name {
+    font-size: 12px;
+  }
+  
+  .logo-carousel-track {
+    gap: 1rem;
+    width: calc(200% + 1rem);
+    animation-duration: 25s;
+  }
+  
+  .carousel-fade-left,
+  .carousel-fade-right {
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-carousel-container {
+    max-width: 400px;
+    bottom: 2.5rem;
+  }
+  
+  .logo-card {
+    width: 90px;
+    height: 55px;
+  }
+  
+  .brand-name {
+    font-size: 11px;
+  }
+  
+  .logo-carousel-track {
+    gap: 0.8rem;
+    width: calc(200% + 0.8rem);
+  }
+  
+  .carousel-fade-left,
+  .carousel-fade-right {
+    width: 50px;
+  }
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .benefits-card {
@@ -2312,10 +2528,26 @@ body {
   .benefits-icon {
     transition: none;
   }
+  
+  .logo-carousel-track {
+    animation: none !important;
+  }
+  
+  .logo-card {
+    transition: none;
+  }
+  
+  .logo-card:hover {
+    transform: none;
+  }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .hero-section {
+    padding-top: 4rem;
+  }
+  
   .hero-headline {
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -2433,6 +2665,77 @@ a:focus {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Pill Box Styles */
+.pill-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 24px;
+  padding: 8px 16px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.pill-box:hover {
+  box-shadow: 
+    0 8px 15px rgba(59, 130, 246, 0.15),
+    0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.pill-box-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3b82f6;
+  animation: flash-blue 1.5s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.pill-box-text {
+  line-height: 1;
+  letter-spacing: 0.025em;
+}
+
+@keyframes flash-blue {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    background: #3b82f6;
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+    background: #60a5fa;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+  }
+}
+
+/* Responsive adjustments for pill box */
+@media (max-width: 768px) {
+  .pill-box {
+    font-size: 13px;
+    padding: 6px 14px;
+    gap: 6px;
+  }
+  
+  .pill-box-dot {
+    width: 6px;
+    height: 6px;
+  }
 }
 
 /* Custom Scrollbar Styling */
