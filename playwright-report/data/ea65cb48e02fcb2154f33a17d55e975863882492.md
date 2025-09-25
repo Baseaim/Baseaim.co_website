@@ -1,0 +1,308 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - main [ref=e3]:
+      - navigation "Main navigation" [ref=e4]:
+        - generic [ref=e6]:
+          - img "Baseaim Logo" [ref=e8]
+          - generic [ref=e9]:
+            - link "How It Works" [ref=e10] [cursor=pointer]:
+              - /url: "#how-it-works"
+            - link "Solutions" [ref=e11] [cursor=pointer]:
+              - /url: "#services"
+            - link "About Us" [ref=e12] [cursor=pointer]:
+              - /url: /about-us
+            - link "Contact" [ref=e13] [cursor=pointer]:
+              - /url: "#contact"
+            - button "Get In Touch" [ref=e14] [cursor=pointer]
+      - generic [ref=e15]:
+        - generic [ref=e26]:
+          - generic [ref=e29]: 3 Spots Left
+          - heading "The trusted partners for self sustaining AI Development" [level=1] [ref=e30]:
+            - text: The trusted partners
+            - text: for self sustaining AI
+            - generic [ref=e32]: Development
+          - paragraph [ref=e33]: Smarter operations, lower costs, more growth — powered by AI
+          - generic [ref=e34]:
+            - button "Get Started Today" [ref=e35] [cursor=pointer]
+            - link "About Us" [ref=e36] [cursor=pointer]:
+              - /url: /about-us
+        - generic [ref=e39]:
+          - generic [ref=e42] [cursor=pointer]: OpenAI
+          - generic [ref=e45] [cursor=pointer]: n8n
+          - generic [ref=e48] [cursor=pointer]: Anthropic
+          - generic [ref=e51] [cursor=pointer]: ElevenLabs
+          - generic [ref=e54] [cursor=pointer]: Google
+          - generic [ref=e57] [cursor=pointer]: Meta
+          - generic [ref=e60] [cursor=pointer]: Claude
+          - generic [ref=e63] [cursor=pointer]: OpenAI
+          - generic [ref=e66] [cursor=pointer]: n8n
+          - generic [ref=e69] [cursor=pointer]: Anthropic
+          - generic [ref=e72] [cursor=pointer]: ElevenLabs
+          - generic [ref=e75] [cursor=pointer]: Google
+          - generic [ref=e78] [cursor=pointer]: Meta
+          - generic [ref=e81] [cursor=pointer]: Claude
+        - generic [ref=e82]: Scroll down to discover more
+      - generic [ref=e84]:
+        - generic [ref=e85]:
+          - generic [ref=e88]: new revolution
+          - heading "Why most SMBs Stay stuck" [level=2] [ref=e89]:
+            - generic [ref=e90]: Why most SMBs
+            - generic [ref=e91]: Stay stuck
+          - paragraph [ref=e92]: Every day without automation, your competition gets further ahead. See how AI transforms these business-critical challenges.
+        - generic [ref=e94]:
+          - generic [ref=e95]:
+            - generic [ref=e96]:
+              - img [ref=e98]
+              - heading "The Old Way" [level=3] [ref=e100]
+            - generic [ref=e101]:
+              - generic [ref=e102]:
+                - img [ref=e104]
+                - generic [ref=e106]: Manual data entry and repetitive tasks
+              - generic [ref=e107]:
+                - img [ref=e109]
+                - generic [ref=e111]: Hours or days to respond to customers
+              - generic [ref=e112]:
+                - img [ref=e114]
+                - generic [ref=e116]: Error-prone processes and human mistakes
+              - generic [ref=e117]:
+                - img [ref=e119]
+                - generic [ref=e121]: Expensive hiring for every new task
+              - generic [ref=e122]:
+                - img [ref=e124]
+                - generic [ref=e126]: Making decisions based on gut feeling
+          - img [ref=e130]
+          - generic [ref=e132]:
+            - generic [ref=e133]:
+              - img [ref=e135]
+              - heading "The AI Way" [level=3] [ref=e137]
+            - generic [ref=e138]:
+              - generic [ref=e139]:
+                - img [ref=e141]
+                - generic [ref=e143]: Automated processing in seconds
+              - generic [ref=e144]:
+                - img [ref=e146]
+                - generic [ref=e148]: Instant 24/7 customer responses
+              - generic [ref=e149]:
+                - img [ref=e151]
+                - generic [ref=e153]: 99.9% accuracy with AI precision
+              - generic [ref=e154]:
+                - img [ref=e156]
+                - generic [ref=e158]: Unlimited capacity without hiring
+              - generic [ref=e159]:
+                - img [ref=e161]
+                - generic [ref=e163]: Data-driven insights and predictions
+      - generic [ref=e166]:
+        - paragraph [ref=e168]:
+          - text: you can expect
+          - img [ref=e169]
+        - generic [ref=e171]:
+          - generic [ref=e173]:
+            - img [ref=e175]
+            - generic [ref=e177]:
+              - generic [ref=e180]: ~0%
+              - paragraph [ref=e181]: of calls automated
+          - generic [ref=e183]:
+            - img [ref=e185]
+            - generic [ref=e187]:
+              - generic [ref=e190]: ~0%
+              - paragraph [ref=e191]: boost in appointments
+          - generic [ref=e193]:
+            - img [ref=e195]
+            - generic [ref=e197]:
+              - generic [ref=e200]: +0%
+              - paragraph [ref=e201]: in lead conversion rates
+      - region "Our AI Solutions" [ref=e202]:
+        - generic [ref=e211]:
+          - generic [ref=e212]:
+            - heading "Our AI Solutions" [level=2] [ref=e214]:
+              - generic [ref=e215]: Our AI
+              - generic [ref=e216]: Solutions
+            - generic [ref=e218]:
+              - generic [ref=e221]:
+                - img [ref=e223]
+                - heading "Customer Experience Automation" [level=3] [ref=e225]
+                - paragraph [ref=e226]: AI-powered chatbots, automated follow-ups, and personalized customer journeys that enhance satisfaction and drive conversions.
+                - generic [ref=e227]:
+                  - generic [ref=e228]: 24/7 Support
+                  - generic [ref=e229]: Lead Qualification
+                  - generic [ref=e230]: Personalization
+              - generic [ref=e233]:
+                - img [ref=e235]
+                - heading "Operations & Workflow Intelligence" [level=3] [ref=e237]
+                - paragraph [ref=e238]: Streamline processes with intelligent automation, data synchronization, and smart task routing that eliminates bottlenecks.
+                - generic [ref=e239]:
+                  - generic [ref=e240]: Process Automation
+                  - generic [ref=e241]: Data Integration
+                  - generic [ref=e242]: Smart Routing
+              - generic [ref=e245]:
+                - img [ref=e247]
+                - heading "Growth & Analytics Solutions" [level=3] [ref=e249]
+                - paragraph [ref=e250]: Predictive insights, lead scoring, and performance analytics that identify opportunities and optimize your growth strategy.
+                - generic [ref=e251]:
+                  - generic [ref=e252]: Predictive Analytics
+                  - generic [ref=e253]: Lead Scoring
+                  - generic [ref=e254]: Growth Insights
+            - button "Explore Our Solutions" [ref=e256] [cursor=pointer]
+          - generic [ref=e258]:
+            - generic [ref=e260]:
+              - generic [ref=e262]: How it works
+              - heading "Getting started is simple" [level=1] [ref=e263]
+              - paragraph [ref=e264]: A simple, four step process to make your life easier.
+            - generic [ref=e266]:
+              - generic [ref=e268]:
+                - generic [ref=e269]: "1"
+                - heading "Discover & Analyze" [level=3] [ref=e270]
+                - paragraph [ref=e271]: We identify inefficiencies in your current processes and pinpoint exactly where AI can deliver the biggest impact
+              - generic [ref=e273]:
+                - generic [ref=e274]: "2"
+                - heading "AI Blueprint" [level=3] [ref=e275]
+                - paragraph [ref=e276]: We design a comprehensive AI roadmap tailored to your business, ensuring every automation delivers maximum value
+              - generic [ref=e278]:
+                - generic [ref=e279]: "3"
+                - heading "Build & Implement" [level=3] [ref=e280]
+                - paragraph [ref=e281]: We develop and implement your custom AI solutions, seamlessly integrating them into your existing workflow
+              - generic [ref=e283]:
+                - generic [ref=e284]: "4"
+                - heading "Refine & Optimize" [level=3] [ref=e285]
+                - paragraph [ref=e286]: We continuously fine-tune your AI systems to ensure they're running at full capacity and delivering peak performance
+            - generic [ref=e288]:
+              - button "Go to step 1" [ref=e289] [cursor=pointer]
+              - button "Go to step 2" [ref=e290] [cursor=pointer]
+              - button "Go to step 3" [ref=e291] [cursor=pointer]
+              - button "Go to step 4" [ref=e292] [cursor=pointer]
+      - generic [ref=e297]:
+        - generic [ref=e298]:
+          - heading "What AI Automation can do for your business" [level=2] [ref=e299]
+          - generic [ref=e300]:
+            - generic [ref=e301]:
+              - img [ref=e303]
+              - generic [ref=e305]:
+                - heading "Scalability" [level=3] [ref=e306]
+                - paragraph [ref=e307]: Easily expand your operations by automating more processes as you grow.
+            - generic [ref=e308]:
+              - img [ref=e310]
+              - generic [ref=e312]:
+                - heading "Always On" [level=3] [ref=e313]
+                - paragraph [ref=e314]: Automation that runs 24/7 — no breaks, no downtime, just consistent delivery.
+            - generic [ref=e315]:
+              - img [ref=e317]
+              - generic [ref=e319]:
+                - heading "Seamless Integration" [level=3] [ref=e320]
+                - paragraph [ref=e321]: Connects directly with your existing tools, CRM, and workflows without disruption.
+            - generic [ref=e322]:
+              - img [ref=e324]
+              - generic [ref=e326]:
+                - heading "Efficiency at Scale" [level=3] [ref=e327]
+                - paragraph [ref=e328]: Reduce repetitive admin and wasted hours, letting your team focus on high-value work.
+        - generic [ref=e330]:
+          - generic [ref=e331]:
+            - generic [ref=e332]:
+              - progressbar "Lost time on manual tasks"
+            - paragraph [ref=e334]: Lost time on manual tasks
+          - generic [ref=e335]:
+            - generic [ref=e336]:
+              - progressbar "With our AI Automation"
+            - paragraph [ref=e338]: With our AI Automation
+      - generic [ref=e343]:
+        - generic [ref=e344]:
+          - img "Baseaim Logo" [ref=e346]
+          - heading "Put your details here" [level=2] [ref=e347]
+          - paragraph [ref=e348]: to get your automation blueprint
+        - generic [ref=e349]:
+          - generic [ref=e350]:
+            - generic [ref=e351]:
+              - generic [ref=e352]: First Name
+              - textbox "First Name" [ref=e353]
+            - generic [ref=e354]:
+              - generic [ref=e355]: Email
+              - textbox "Email" [ref=e356]
+            - generic [ref=e357]:
+              - generic [ref=e358]: Phone Number
+              - textbox "Phone Number" [ref=e359]: "+61"
+            - generic [ref=e360]:
+              - generic [ref=e361]: Business Name
+              - textbox "Business Name" [ref=e362]
+          - button "Send" [ref=e363] [cursor=pointer]
+        - paragraph [ref=e365]: By clicking Send you agree to receive autodialed calls and emails from Talk AI and agree to Privacy Policy. We will only send demo calls to local Australian numbers.
+      - generic [ref=e368]:
+        - heading "Supercharge Your Workflow" [level=2] [ref=e370]:
+          - generic [ref=e371]: Supercharge
+          - generic [ref=e372]: Your Workflow
+        - generic [ref=e373]:
+          - article [ref=e374] [cursor=pointer]:
+            - generic [ref=e375] [cursor=pointer]:
+              - generic [ref=e376] [cursor=pointer]:
+                - generic [ref=e377] [cursor=pointer]: Automate Tasks
+                - heading "Save Hours with AI-Powered Automation" [level=3] [ref=e378] [cursor=pointer]
+                - paragraph [ref=e379] [cursor=pointer]: Reduce manual work with smart automation that streamlines repetitive tasks, freeing up time for what matters most.
+                - button "Get Started →" [ref=e380] [cursor=pointer]
+              - img [ref=e382] [cursor=pointer]
+          - article [ref=e388] [cursor=pointer]:
+            - generic [ref=e389] [cursor=pointer]:
+              - generic [ref=e390] [cursor=pointer]:
+                - generic [ref=e391] [cursor=pointer]: Real-Time Collaboration
+                - heading "Work Seamlessly with Your Team" [level=3] [ref=e392] [cursor=pointer]
+                - paragraph [ref=e393] [cursor=pointer]: Live collaboration, instant feedback, and version control—no more messy email threads.
+                - button "Try It Now →" [ref=e394] [cursor=pointer]
+              - img [ref=e396] [cursor=pointer]
+          - article [ref=e405] [cursor=pointer]:
+            - generic [ref=e406] [cursor=pointer]:
+              - generic [ref=e407] [cursor=pointer]:
+                - generic [ref=e408] [cursor=pointer]: Powerful Integrations
+                - heading "Connect with Your Favorite Tools" [level=3] [ref=e409] [cursor=pointer]
+                - paragraph [ref=e410] [cursor=pointer]: Integrate with Slack, Notion, Zapier, and more to keep your workflow efficient.
+                - button "Explore Integrations →" [ref=e411] [cursor=pointer]
+              - img [ref=e413] [cursor=pointer]
+          - article [ref=e424] [cursor=pointer]:
+            - generic [ref=e425] [cursor=pointer]:
+              - generic [ref=e426] [cursor=pointer]:
+                - generic [ref=e427] [cursor=pointer]: Advanced Analytics
+                - heading "Make Data-Driven Decisions" [level=3] [ref=e428] [cursor=pointer]
+                - paragraph [ref=e429] [cursor=pointer]: Real-time analytics and reports to optimize performance and drive better results.
+                - button "View Insights →" [ref=e430] [cursor=pointer]
+              - img [ref=e432] [cursor=pointer]
+      - generic [ref=e447]:
+        - generic [ref=e448]:
+          - heading "Frequently Asked Questions" [level=2] [ref=e449]
+          - paragraph [ref=e450]: Everything you need to know about our AI automation services
+        - generic [ref=e451]:
+          - generic [ref=e452]:
+            - button "How long does implementation take?" [ref=e453] [cursor=pointer]:
+              - heading "How long does implementation take?" [level=3] [ref=e454] [cursor=pointer]
+              - img [ref=e456] [cursor=pointer]
+            - paragraph [ref=e459]: Most implementations take 2-4 weeks depending on complexity. We work closely with your team to ensure minimal disruption to your current operations while maximizing the efficiency gains.
+          - generic [ref=e460]:
+            - button "What kind of support do you provide?" [ref=e461] [cursor=pointer]:
+              - heading "What kind of support do you provide?" [level=3] [ref=e462] [cursor=pointer]
+              - img [ref=e464] [cursor=pointer]
+            - paragraph [ref=e467]: We offer comprehensive 24/7 support including setup assistance, training for your team, ongoing maintenance, and regular optimization reviews to ensure peak performance.
+          - generic [ref=e468]:
+            - button "Can you integrate with our existing systems?" [ref=e469] [cursor=pointer]:
+              - heading "Can you integrate with our existing systems?" [level=3] [ref=e470] [cursor=pointer]
+              - img [ref=e472] [cursor=pointer]
+            - paragraph [ref=e475]: Yes! Our solutions are designed to seamlessly integrate with popular CRM systems, communication tools, and business applications. We handle all technical integration work.
+          - generic [ref=e476]:
+            - button "What's the ROI on AI automation?" [ref=e477] [cursor=pointer]:
+              - heading "What's the ROI on AI automation?" [level=3] [ref=e478] [cursor=pointer]
+              - img [ref=e480] [cursor=pointer]
+            - paragraph [ref=e483]: Our clients typically see 40-60% reduction in manual task time within the first 3 months, leading to significant cost savings and improved productivity that pays for the investment quickly.
+          - generic [ref=e484]:
+            - button "Do you offer custom solutions?" [ref=e485] [cursor=pointer]:
+              - heading "Do you offer custom solutions?" [level=3] [ref=e486] [cursor=pointer]
+              - img [ref=e488] [cursor=pointer]
+            - paragraph [ref=e491]: Absolutely. Every business is unique, so we tailor our AI automation solutions to match your specific workflows, industry requirements, and growth objectives.
+        - generic [ref=e492]:
+          - paragraph [ref=e493]: Still have questions? We're here to help.
+          - button "Get In Touch" [ref=e494] [cursor=pointer]
+      - generic [ref=e497]:
+        - generic [ref=e498]:
+          - img "Baseaim Logo" [ref=e499]
+          - paragraph [ref=e500]: Transforming local businesses with AI automation
+        - generic [ref=e501]: © 2024 Baseaim. All rights reserved.
+    - button "Open chat" [ref=e502] [cursor=pointer]:
+      - img [ref=e503] [cursor=pointer]
+  - alert [ref=e508]
+```

@@ -7,6 +7,7 @@ import { FormProvider } from '@/contexts/FormContext';
 import Footer from '@/components/Footer';
 import ChatbotWidget from '@/components/ChatbotWidget';
 import FormSlider from '@/components/FormSlider';
+import GradientBG from '@/components/GradientBG';
 
 function AboutUsContent() {
   const { openForm, isFormOpen, closeForm } = useForm();
@@ -15,7 +16,7 @@ function AboutUsContent() {
     <>
       <main className="min-h-screen text-gray-900 font-inter bg-white">
         {/* Navigation Bar */}
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
           <div className="w-full px-8">
             <div className="flex items-center justify-between h-16">
               {/* Logo */}
@@ -67,18 +68,19 @@ function AboutUsContent() {
         </nav>
 
         {/* Hero Section */}
-        <section className="pt-24 pb-16 bg-gradient-to-br from-blue-50 to-white">
-          <div className="container mx-auto px-6">
+        <section className="relative pt-24 pb-16 overflow-hidden">
+          <GradientBG />
+          <div className="relative container mx-auto px-6 z-10">
             <div className="max-w-4xl mx-auto text-center">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-black mb-6 font-montserrat">
-                  About <span className="text-blue-600">Baseaim</span>
+                <h1 className="hero-headline">
+                  About <span className="hero-highlight">Baseaim</span>
                 </h1>
-                <p className="text-xl text-gray-600 max-w-2xl mx-auto font-inter">
+                <p className="hero-subheadline">
                   We're on a mission to help businesses thrive through intelligent AI automation.
                 </p>
               </motion.div>
@@ -101,10 +103,7 @@ function AboutUsContent() {
                     Our Mission
                   </h2>
                   <p className="text-xl md:text-2xl text-gray-800 leading-relaxed font-inter font-medium mb-8">
-                    To empower people and businesses to harness AI with <span className="text-blue-600">clarity and confidence</span> — transforming overwhelm into efficiency, wasted time into innovation, and potential into real success.
-                  </p>
-                  <p className="text-lg text-gray-600 leading-relaxed font-inter">
-                    We believe AI shouldn't be complicated or intimidating. Our mission is to make it accessible, practical, and transformative for businesses of all sizes.
+                    At <span className="text-blue-600">BaseAim</span>, our mission is to lead at the forefront of the <span className="text-blue-600">AI revolution</span>. We help businesses harness the power of this AI gold rush — not with cookie-cutter strategies, but with long-term infrastructure built for growth and scale. We believe in true partnership, connecting our AI expertise with your vision to unlock measurable results.
                   </p>
                 </motion.div>
 
