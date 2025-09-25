@@ -147,6 +147,16 @@ body {
   margin-left: -0.1em;
 }
 
+/* Inline gradient text for mission paragraph highlights */
+.gradient-text-inline {
+  background: linear-gradient(135deg, #87CEEB, #0052CC, #0066FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: italic;
+  font-weight: inherit;
+}
+
 .morphing-text {
   position: relative;
   display: inline-block;

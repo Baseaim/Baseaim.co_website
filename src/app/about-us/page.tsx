@@ -103,7 +103,7 @@ function AboutUsContent() {
                     Our Mission
                   </h2>
                   <p className="text-xl md:text-2xl text-gray-800 leading-relaxed font-inter font-medium mb-8">
-                    At <span className="text-blue-600">BaseAim</span>, our mission is to lead at the forefront of the <span className="text-blue-600">AI revolution</span>. We help businesses harness the power of this AI gold rush — not with cookie-cutter strategies, but with long-term infrastructure built for growth and scale. We believe in true partnership, connecting our AI expertise with your vision to unlock measurable results.
+                    At <span className="gradient-text-inline">BaseAim</span>, our mission is to lead at the forefront of the <span className="gradient-text-inline">AI revolution</span>. We help businesses harness the power of this AI gold rush — not with cookie-cutter strategies, but with long-term infrastructure built for growth and scale. We believe in true partnership, connecting our AI expertise with your vision to unlock measurable results.
                   </p>
                 </motion.div>
 
