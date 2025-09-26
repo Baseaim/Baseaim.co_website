@@ -231,9 +231,9 @@ function AboutUsContent() {
                   {
                     name: "Khan Kim",
                     position: "COO & Co-Founder",
-                    image: "/api/placeholder/300/300",
+                    image: "/megamind-forehead.png",
                     socials: {
-                      linkedin: "#",
+                      linkedin: "https://www.linkedin.com/in/khan-k",
                       twitter: "#",
                     }
                   },
@@ -251,7 +251,7 @@ function AboutUsContent() {
                     position: "CGO & Co-Founder",
                     image: "/linked in profile pic.png",
                     socials: {
-                      linkedin: "#",
+                      linkedin: "https://www.linkedin.com/in/sora-nakayama-a19a52286",
                       twitter: "#",
                     }
                   }
