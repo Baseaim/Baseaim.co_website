@@ -105,16 +105,19 @@ body {
 }
 
 .hero-headline {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-size: clamp(2rem, 5vw, 4.5rem);
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.2;
   margin-bottom: 1.5rem;
   font-family: var(--font-montserrat), sans-serif;
   color: #1a1a1a;
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
   text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
   overflow: visible;
-  padding: 0.2em 0.3em;
+  padding: 0.1em 0.2em;
+  text-align: center;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .hero-highlight {
@@ -126,10 +129,10 @@ body {
   font-family: var(--font-dm-serif-display), serif;
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(3.5rem, 8vw, 6rem) !important;
-  padding: 0.2em 0.4em;
+  font-size: clamp(2.5rem, 7vw, 6rem) !important;
+  padding: 0.1em 0.2em;
   overflow: visible;
-  line-height: 1.3;
+  line-height: 1.1;
 }
 
 /* About page specific styling - with gradient for Baseaim */
@@ -142,9 +145,10 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-shadow: none;
-  font-size: clamp(2.5rem, 6vw, 4.5rem) !important;
+  font-size: clamp(2rem, 5vw, 4.5rem) !important;
   padding: 0;
-  margin-left: -0.1em;
+  margin-left: -0.05em;
+  line-height: 1.1;
 }
 
 /* Inline gradient text for mission paragraph highlights */
@@ -182,6 +186,21 @@ body {
 /* Slightly smaller text for "About" in hero */
 .about-text {
   font-size: 0.9em;
+}
+
+/* Mobile text utilities */
+.mobile-text-optimize {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .mobile-text-optimize {
+    word-spacing: -0.05em;
+    letter-spacing: -0.01em;
+  }
 }
 
 .morphing-text {
@@ -277,6 +296,10 @@ body {
   transition: all 0.3s ease;
   font-family: 'Inter', sans-serif;
   box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .hero-cta-primary:hover {
@@ -2597,28 +2620,64 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-section {
-    padding-top: 4rem;
+    padding-top: 1.5rem;
+    align-items: center;
   }
   
   .hero-headline {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    word-break: break-word;
+    padding: 0.05em 0.1em;
+  }
+  
+  .hero-highlight {
+    font-size: clamp(2.8rem, 12vw, 4.5rem) !important;
+    line-height: 1.0;
+    padding: 0.05em 0.1em;
+    display: block;
+    text-align: center;
+    margin: 0.5rem 0;
   }
   
   .hero-subheadline {
     font-size: 1.1rem;
-    margin-bottom: 2rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    text-align: center;
   }
   
   .hero-cta-wrapper {
-    flex-direction: column;
-    gap: 0.75rem;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
   }
   
   .hero-cta-primary,
   .hero-cta-secondary {
-    width: 100%;
-    max-width: 280px;
+    width: auto;
+    max-width: 130px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  
+  .carousel-logo {
+    max-height: 30px;
+    max-width: 80px;
+  }
+  
+  .pill-box {
+    margin-top: -1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-scroll-text {
+    font-size: 0.7rem;
+    white-space: nowrap;
   }
   
   .stats-grid-horizontal {
@@ -2654,11 +2713,26 @@ body {
 
 @media (max-width: 480px) {
   .hero-headline {
-    font-size: 2rem;
+    font-size: clamp(1.6rem, 7vw, 2rem);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    padding: 0.05em;
+  }
+  
+  .hero-highlight {
+    font-size: clamp(2.5rem, 13vw, 3.5rem) !important;
+    line-height: 1.0;
+    padding: 0.05em;
+    text-shadow: 0 0 15px rgba(135, 206, 235, 0.2);
+    display: block;
+    text-align: center;
+    margin: 0.5rem 0;
   }
   
   .hero-subheadline {
-    font-size: 1rem;
+    font-size: clamp(0.95rem, 4vw, 1rem);
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
   }
   
   .pain-point-card {

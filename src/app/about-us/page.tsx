@@ -423,7 +423,7 @@ function AboutUsContent() {
                 </p>
                 <button
                   onClick={openForm}
-                  className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-medium rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg font-inter"
+                  className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg font-inter"
                 >
                   Get In Touch
                 </button>
