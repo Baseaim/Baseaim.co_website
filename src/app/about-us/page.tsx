@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from '@/contexts/FormContext';
 import { FormProvider } from '@/contexts/FormContext';
@@ -11,6 +11,7 @@ import GradientBG from '@/components/GradientBG';
 
 function AboutUsContent() {
   const { openForm, isFormOpen, closeForm } = useForm();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <>
@@ -63,9 +64,85 @@ function AboutUsContent() {
                   Get In Touch
                 </button>
               </div>
+              
+              {/* Mobile Menu Button */}
+              <div className="md:hidden">
+                <button 
+                  className="text-gray-700 hover:text-blue-600 focus:outline-none"
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                >
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </nav>
+
+        {/* Mobile Menu Overlay */}
+        {mobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-40 md:hidden"
+          >
+            <div className="fixed inset-0 bg-black bg-opacity-30" onClick={() => setMobileMenuOpen(false)}></div>
+            <motion.div 
+              initial={{ y: "-100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-100%" }}
+              transition={{ type: "tween", duration: 0.3, ease: "easeOut" }}
+              className="fixed top-16 left-0 w-full bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200"
+            >
+              <div className="p-6">
+                {/* Mobile Navigation Links */}
+                <nav className="space-y-4">
+                  <a 
+                    href="/#how-it-works" 
+                    className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    How It Works
+                  </a>
+                  <a 
+                    href="/#services" 
+                    className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Solutions
+                  </a>
+                  <a 
+                    href="/about-us" 
+                    className="block text-lg font-medium text-blue-600 transition-colors duration-200 py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    About Us
+                  </a>
+                  <a 
+                    href="/#contact" 
+                    className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Contact
+                  </a>
+                  
+                  {/* Mobile CTA Button */}
+                  <button 
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition-colors duration-200 mt-6"
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      openForm();
+                    }}
+                  >
+                    Get In Touch
+                  </button>
+                </nav>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
 
         {/* Hero Section */}
         <section className="relative pt-24 pb-16 overflow-hidden">
@@ -78,7 +155,7 @@ function AboutUsContent() {
                 transition={{ duration: 0.8 }}
               >
                 <h1 className="hero-headline">
-                  <span className="about-text">About</span> <span className="hero-highlight">Baseaim</span>
+                  About <span className="values-text">Baseaim</span>
                 </h1>
                 <p className="hero-subheadline">
                   We're on a mission to help businesses thrive through intelligent AI automation.
@@ -166,7 +243,7 @@ function AboutUsContent() {
                   },
                   {
                     title: "Play + Purpose",
-                    description: "We take our mission seriously, but never ourselves. Work should energize, not drain.",
+                    description: "Serious about results, playful in the journey. We believe work should inspire energy, not exhaustion.",
                     icon: (
                       <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />

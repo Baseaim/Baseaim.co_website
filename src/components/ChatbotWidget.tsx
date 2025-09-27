@@ -194,24 +194,13 @@ export default function ChatbotWidget() {
           whileTap="tap"
           aria-label="Open chat"
         >
-          <svg 
-            width="24" 
-            height="24" 
-            viewBox="0 0 24 24" 
-            fill="none"
+          <Image
+            src="/BASEAIM BLACK.PNG"
+            alt="Baseaim"
+            width={28}
+            height={28}
             className="chat-icon"
-          >
-            <path 
-              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-            />
-            <circle cx="9" cy="11" r="1" fill="currentColor"/>
-            <circle cx="12" cy="11" r="1" fill="currentColor"/>
-            <circle cx="15" cy="11" r="1" fill="currentColor"/>
-          </svg>
+          />
         </motion.button>
       )}
 
@@ -262,7 +251,7 @@ export default function ChatbotWidget() {
                     <div key={message.id} className="message bot-message">
                       <div className="message-avatar">
                         <Image
-                          src="../BASEAIM BLACK.png"
+                          src="/BASEAIM BLACK.PNG"
                           alt="Baseaim"
                           width={24}
                           height={24}
@@ -282,7 +271,7 @@ export default function ChatbotWidget() {
                       {message.sender === 'bot' && (
                         <div className="message-avatar">
                           <Image
-                            src="../BASEAIM BLACK.png"
+                            src="/BASEAIM BLACK.PNG"
                             alt="Baseaim"
                             width={24}
                             height={24}
@@ -299,7 +288,7 @@ export default function ChatbotWidget() {
                   <div className="message bot-message">
                     <div className="message-avatar">
                       <Image
-                        src="../BASEAIM BLACK.png"
+                        src="/BASEAIM BLACK.PNG"
                         alt="Baseaim"
                         width={24}
                         height={24}
@@ -346,7 +335,7 @@ export default function ChatbotWidget() {
                 </form>
                 <div className="chat-disclaimer">
                   <Image
-                    src="/black logo .png"
+                    src="/BASEAIM BLACK.PNG"
                     alt="Baseaim"
                     width={32}
                     height={32}
