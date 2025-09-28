@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import GradientBG from './GradientBG';
-import PillBox from './PillBox';
 import LogoCarousel from './LogoCarousel';
 import { useForm } from '@/contexts/FormContext';
 
@@ -28,7 +27,6 @@ const Hero = () => {
       <div className="hero-content">
         <div className="hero-container">
           <div className="hero-text-wrapper">
-            <PillBox />
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
