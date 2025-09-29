@@ -14,6 +14,8 @@ interface Message {
 
 export default function ChatbotWidget() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showPrompt, setShowPrompt] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
@@ -26,6 +28,8 @@ export default function ChatbotWidget() {
   const [isLoading, setIsLoading] = useState(false);
   const [sessionId] = useState(() => `session-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const promptTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const { openForm } = useForm();
 
   const WEBHOOK_URL = 'https://n8n.ryderagency.com/webhook/80174bb5-5ca5-43ec-bf4d-c0a2c90e052f/chat';
@@ -37,6 +41,15 @@ export default function ChatbotWidget() {
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
+    setHasInteracted(true);
+    setShowPrompt(false);
+    // Clear any existing timeouts
+    if (promptTimeoutRef.current) {
+      clearTimeout(promptTimeoutRef.current);
+    }
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current);
+    }
   };
 
   const closeChat = () => {
@@ -55,6 +68,41 @@ export default function ChatbotWidget() {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  // Manage prompt bubble timing
+  useEffect(() => {
+    if (!hasInteracted) {
+      // Show prompt after 5 seconds
+      promptTimeoutRef.current = setTimeout(() => {
+        setShowPrompt(true);
+
+        // Hide prompt after 10 seconds
+        hideTimeoutRef.current = setTimeout(() => {
+          setShowPrompt(false);
+
+          // Show again after 30 seconds if still no interaction
+          if (!hasInteracted) {
+            promptTimeoutRef.current = setTimeout(() => {
+              setShowPrompt(true);
+              // Hide again after 10 seconds
+              hideTimeoutRef.current = setTimeout(() => {
+                setShowPrompt(false);
+              }, 10000);
+            }, 30000);
+          }
+        }, 10000);
+      }, 5000);
+    }
+
+    return () => {
+      if (promptTimeoutRef.current) {
+        clearTimeout(promptTimeoutRef.current);
+      }
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current);
+      }
+    };
+  }, [hasInteracted]);
 
   const sendMessage = async (text: string) => {
     if (!text.trim() || isLoading) return;
@@ -182,26 +230,45 @@ export default function ChatbotWidget() {
 
   return (
     <>
-      {/* Chat Bubble */}
+      {/* Chat Bubble with Prompt */}
       {!isOpen && (
-        <motion.button
-          className="chatbot-bubble"
-          onClick={toggleChat}
-          variants={bubbleVariants}
-          initial="initial"
-          animate="animate"
-          whileHover="hover"
-          whileTap="tap"
-          aria-label="Open chat"
-        >
-          <Image
-            src="/BASEAIM BLACK.PNG"
-            alt="Baseaim"
-            width={28}
-            height={28}
-            className="chat-icon"
-          />
-        </motion.button>
+        <div className="chatbot-wrapper">
+          {/* Prompt Message Bubble */}
+          <AnimatePresence>
+            {showPrompt && (
+              <motion.div
+                className="chatbot-prompt"
+                initial={{ opacity: 0, scale: 0.8, x: 10 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                exit={{ opacity: 0, scale: 0.8, x: 10 }}
+                transition={{ duration: prefersReducedMotion ? 0 : 0.3 }}
+                onClick={toggleChat}
+              >
+                <p>Need help? Chat with us!</p>
+                <div className="prompt-arrow"></div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          <motion.button
+            className="chatbot-bubble"
+            onClick={toggleChat}
+            variants={bubbleVariants}
+            initial="initial"
+            animate="animate"
+            whileHover="hover"
+            whileTap="tap"
+            aria-label="Open chat"
+          >
+            <Image
+              src="/baseaim white.png"
+              alt="Baseaim"
+              width={28}
+              height={28}
+              className="chat-icon"
+            />
+          </motion.button>
+        </div>
       )}
 
       {/* Chat Interface */}

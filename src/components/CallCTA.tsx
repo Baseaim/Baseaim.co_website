@@ -35,7 +35,7 @@ export default function CallCTA() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: prefersReducedMotion ? 0 : 0.3 }}
-          className="fixed bottom-6 right-6 z-50 md:hidden"
+          className="fixed bottom-6 left-6 z-50 md:hidden"
         >
           <div className="relative">
             <AnimatePresence>
@@ -45,7 +45,7 @@ export default function CallCTA() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: prefersReducedMotion ? 0 : 0.2 }}
-                  className="absolute bottom-16 right-0 bg-white rounded-2xl shadow-2xl p-4 w-72 border border-gray-100"
+                  className="absolute bottom-16 left-0 bg-white rounded-2xl shadow-2xl p-4 w-72 border border-gray-100"
                 >
                   <button
                     onClick={handleToggle}

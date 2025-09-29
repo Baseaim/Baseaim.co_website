@@ -1783,10 +1783,57 @@ body {
 }
 
 /* Chatbot Widget Styles */
-.chatbot-bubble {
+.chatbot-wrapper {
   position: fixed;
   bottom: 24px;
   right: 24px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chatbot-prompt {
+  position: relative;
+  background: white;
+  padding: 12px 16px;
+  border-radius: 20px;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.1),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.chatbot-prompt:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 25px rgba(0, 0, 0, 0.15),
+    0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chatbot-prompt p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.prompt-arrow {
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid white;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.08));
+}
+
+.chatbot-bubble {
   width: 64px;
   height: 64px;
   border-radius: 50%;
@@ -1796,10 +1843,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 
+  box-shadow:
     0 8px 25px rgba(59, 130, 246, 0.3),
     0 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
   transition: all 0.2s ease;
 }
 
@@ -1812,8 +1858,10 @@ body {
 
 .chatbot-bubble .chat-icon {
   color: white;
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
+  padding-right: 1px;
+  padding-bottom: 1px;
 }
 
 .chatbot-overlay {
@@ -2109,16 +2157,36 @@ body {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+  .chatbot-wrapper {
+    bottom: 20px;
+    right: 20px;
+    flex-direction: row-reverse;
+  }
+
+  .chatbot-prompt {
+    padding: 10px 14px;
+    max-width: 180px;
+  }
+
+  .chatbot-prompt p {
+    font-size: 13px;
+  }
+
+  .prompt-arrow {
+    left: auto;
+    right: -8px;
+  }
+
   .chatbot-bubble {
     width: 56px;
     height: 56px;
-    bottom: 20px;
-    right: 20px;
   }
-  
+
   .chatbot-bubble .chat-icon {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
+    padding-right: 1px;
+    padding-bottom: 1px;
   }
   
   .chatbot-overlay {
