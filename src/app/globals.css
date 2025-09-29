@@ -2093,15 +2093,21 @@ body {
   transition: all 0.2s ease;
 }
 
-.chat-send-button:not(:disabled):hover {
+.chat-send-button:not(:disabled) {
   background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
   color: white;
+}
+
+.chat-send-button:not(:disabled):hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
   transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
 }
 
 .chat-send-button:disabled {
   cursor: not-allowed;
-  opacity: 0.5;
+  background: #e5e7eb;
+  color: #9ca3af;
 }
 
 /* Typing indicator animation */
