@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import CallOption from './CallOption';
 
 interface FormData {
   firstName: string;
@@ -239,10 +240,13 @@ export default function DemoCTA() {
               </motion.button>
             </form>
 
+            {/* Call Option Alternative */}
+            <CallOption variant="compact" className="mt-6 pt-4 border-t border-gray-100 text-center" />
+
             {/* Disclaimer */}
             <div className="mt-6 pt-4 border-t border-gray-100">
               <p className="text-xs text-gray-500 text-center leading-relaxed font-inter">
-                By clicking Send you agree to receive autodialed calls and emails from Talk AI and agree to Privacy Policy. 
+                By clicking Send you agree to receive autodialed calls and emails from Talk AI and agree to Privacy Policy.
                 We will only send demo calls to local Australian numbers.
               </p>
             </div>

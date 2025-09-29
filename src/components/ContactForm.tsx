@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import CallOption from './CallOption';
 
 interface ContactFormProps {
   onClose: () => void;
@@ -244,6 +245,8 @@ export default function ContactForm({ onClose }: ContactFormProps) {
           )}
         </motion.button>
       </form>
+
+      <CallOption variant="default" className="mt-6" />
     </div>
   );
 }

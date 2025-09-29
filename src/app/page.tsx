@@ -15,6 +15,7 @@ import FormSlider from '@/components/FormSlider';
 import ChatbotWidget from '@/components/ChatbotWidget';
 import Footer from '@/components/Footer';
 import AutomationBenefitsCard from '@/components/AutomationBenefitsCard';
+import CallCTA from '@/components/CallCTA';
 
 
 
@@ -453,6 +454,9 @@ function HomeContent() {
     
     {/* Chatbot Widget */}
     <ChatbotWidget />
+
+    {/* Floating Call CTA for Mobile */}
+    <CallCTA />
     </>
   );
 }
