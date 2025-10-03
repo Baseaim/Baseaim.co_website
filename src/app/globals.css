@@ -49,6 +49,36 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Accessibility: Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.focus\:not-sr-only:focus {
+  position: absolute;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Improved focus styles for better accessibility */
+*:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
 /* Font Family Classes */
 .font-inter {
   font-family: 'Inter', sans-serif;
@@ -2166,7 +2196,7 @@ body {
   .chatbot-wrapper {
     bottom: 20px;
     right: 20px;
-    flex-direction: row-reverse;
+    flex-direction: row;
   }
 
   .chatbot-prompt {
@@ -2179,8 +2209,12 @@ body {
   }
 
   .prompt-arrow {
-    left: auto;
     right: -8px;
+    left: auto;
+    border-left: 8px solid white;
+    border-right: none;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
   }
 
   .chatbot-bubble {

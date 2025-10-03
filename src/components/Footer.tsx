@@ -147,7 +147,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#blog" className="text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm font-inter">
+                <a href="/blog" className="text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm font-inter">
                   Blog
                 </a>
               </li>

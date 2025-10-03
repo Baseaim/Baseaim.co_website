@@ -308,7 +308,7 @@ function AboutUsContent() {
                   {
                     name: "Khan Kim",
                     position: "COO & Co-Founder",
-                    image: "/megamind-forehead.png",
+                    image: "/Khan kim.jpg",
                     socials: {
                       linkedin: "https://www.linkedin.com/in/khan-k",
                       twitter: "#",

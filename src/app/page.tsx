@@ -30,6 +30,11 @@ function HomeContent() {
 
   return (
     <>
+    {/* Skip to main content link for accessibility */}
+    <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-md z-50">
+      Skip to main content
+    </a>
+
     <main className="min-h-screen text-gray-900 font-inter bg-white" role="main">
       {/* Navigation Bar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent" role="navigation" aria-label="Main navigation">
@@ -37,10 +42,13 @@ function HomeContent() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <img 
-                src="/black logo .png" 
-                alt="Baseaim Logo" 
+              <img
+                src="/black logo .png"
+                alt="Baseaim - AI Automation Services"
                 className="h-8 w-auto"
+                loading="eager"
+                width="120"
+                height="32"
               />
             </div>
             
@@ -58,14 +66,20 @@ function HomeContent() {
               >
                 Solutions
               </a>
-              <a 
-                href="/about-us" 
+              <a
+                href="/about-us"
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
               >
                 About Us
               </a>
-              <a 
-                href="#contact" 
+              <a
+                href="/blog"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+              >
+                Blog
+              </a>
+              <a
+                href="#contact"
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
               >
                 Contact
@@ -80,11 +94,14 @@ function HomeContent() {
             
             {/* Mobile Menu Button */}
             <div className="md:hidden">
-              <button 
-                className="text-gray-700 hover:text-blue-600 focus:outline-none"
+              <button
+                className="text-gray-700 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg p-2"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+                aria-expanded={mobileMenuOpen}
+                aria-controls="mobile-menu"
               >
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               </button>
@@ -108,10 +125,11 @@ function HomeContent() {
             exit={{ y: "-100%" }}
             transition={{ type: "tween", duration: 0.3, ease: "easeOut" }}
             className="fixed top-16 left-0 w-full bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200"
+            id="mobile-menu"
           >
             <div className="p-6">
               {/* Mobile Navigation Links */}
-              <nav className="space-y-4">
+              <nav className="space-y-4" aria-label="Mobile navigation">
                 <a 
                   href="#how-it-works" 
                   className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2"
@@ -126,15 +144,22 @@ function HomeContent() {
                 >
                   Solutions
                 </a>
-                <a 
-                  href="/about-us" 
+                <a
+                  href="/about-us"
                   className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   About Us
                 </a>
-                <a 
-                  href="#contact" 
+                <a
+                  href="/blog"
+                  className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Blog
+                </a>
+                <a
+                  href="#contact"
                   className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -156,9 +181,11 @@ function HomeContent() {
           </motion.div>
         </motion.div>
       )}
-      
+
       {/* Premium Gradient Hero Section */}
-      <Hero />
+      <div id="main-content">
+        <Hero />
+      </div>
 
       {/* Industry Pain Points Section */}
       <IndustryPainPoints />
