@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Hero from '@/components/Hero';
 import IndustryPainPoints from '@/components/IndustryPainPoints';
 import CTASection from '@/components/CTASection';
@@ -42,45 +43,50 @@ function HomeContent() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <img
-                src="/black logo .png"
+              <Image
+                src="/logo-black.png"
                 alt="Baseaim - AI Automation Services"
+                width={120}
+                height={32}
+                priority
                 className="h-8 w-auto"
-                loading="eager"
-                width="120"
-                height="32"
               />
             </div>
             
             {/* Right Side - Navigation Links + CTA */}
-            <div className="hidden md:flex items-center space-x-6">
-              <a 
-                href="#how-it-works" 
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+            <div className="hidden md:flex items-center space-x-2">
+              <a
+                href="#how-it-works"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                aria-label="Learn how our AI automation works"
               >
                 How It Works
               </a>
-              <a 
-                href="#services" 
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+              <a
+                href="#services"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                aria-label="Explore our AI automation solutions"
               >
                 Solutions
               </a>
               <a
                 href="/about-us"
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                aria-label="Learn about Baseaim company"
               >
                 About Us
               </a>
               <a
                 href="/blog"
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                aria-label="Read our AI automation insights and tips"
               >
                 Blog
               </a>
               <a
                 href="#contact"
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                aria-label="Get in touch with our team"
               >
                 Contact
               </a>
@@ -95,7 +101,7 @@ function HomeContent() {
             {/* Mobile Menu Button */}
             <div className="md:hidden">
               <button
-                className="text-gray-700 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg p-2"
+                className="text-gray-700 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg p-3 min-w-[44px] min-h-[44px] flex items-center justify-center"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
                 aria-expanded={mobileMenuOpen}
@@ -129,39 +135,44 @@ function HomeContent() {
           >
             <div className="p-6">
               {/* Mobile Navigation Links */}
-              <nav className="space-y-4" aria-label="Mobile navigation">
-                <a 
-                  href="#how-it-works" 
-                  className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2"
+              <nav className="space-y-2" aria-label="Mobile navigation">
+                <a
+                  href="#how-it-works"
+                  className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-3 px-2 min-h-[44px] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   onClick={() => setMobileMenuOpen(false)}
+                  aria-label="Learn how our AI automation works"
                 >
                   How It Works
                 </a>
-                <a 
-                  href="#services" 
-                  className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2"
+                <a
+                  href="#services"
+                  className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-3 px-2 min-h-[44px] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   onClick={() => setMobileMenuOpen(false)}
+                  aria-label="Explore our AI automation solutions"
                 >
                   Solutions
                 </a>
                 <a
                   href="/about-us"
-                  className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2"
+                  className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-3 px-2 min-h-[44px] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   onClick={() => setMobileMenuOpen(false)}
+                  aria-label="Learn about Baseaim company"
                 >
                   About Us
                 </a>
                 <a
                   href="/blog"
-                  className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2"
+                  className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-3 px-2 min-h-[44px] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   onClick={() => setMobileMenuOpen(false)}
+                  aria-label="Read our AI automation insights and tips"
                 >
                   Blog
                 </a>
                 <a
                   href="#contact"
-                  className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2"
+                  className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-3 px-2 min-h-[44px] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   onClick={() => setMobileMenuOpen(false)}
+                  aria-label="Get in touch with our team"
                 >
                   Contact
                 </a>

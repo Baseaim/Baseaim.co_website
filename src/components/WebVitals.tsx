@@ -22,12 +22,12 @@ export default function WebVitals() {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       // Dynamically import web-vitals only on client side
-      import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-        getCLS(reportWebVitals);
-        getFID(reportWebVitals);
-        getFCP(reportWebVitals);
-        getLCP(reportWebVitals);
-        getTTFB(reportWebVitals);
+      import('web-vitals').then((webVitals) => {
+        webVitals.onCLS(reportWebVitals);
+        webVitals.onINP(reportWebVitals);  // INP replaced FID in newer versions
+        webVitals.onFCP(reportWebVitals);
+        webVitals.onLCP(reportWebVitals);
+        webVitals.onTTFB(reportWebVitals);
       });
     }
   }, []);

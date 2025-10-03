@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import CallOption from './CallOption';
 
 interface FormData {
@@ -102,9 +103,11 @@ export default function DemoCTA() {
             {/* Logo */}
             <div className="text-center mb-6">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-50 mb-4">
-                <img 
-                  src="/BASEAIM BLACK.png" 
-                  alt="Baseaim Logo" 
+                <Image
+                  src="/BASEAIM BLACK.png"
+                  alt="Baseaim Logo"
+                  width={40}
+                  height={40}
                   className="w-10 h-10 object-contain"
                 />
               </div>

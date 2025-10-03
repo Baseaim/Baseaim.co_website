@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { useForm } from '@/contexts/FormContext';
 
 export default function Footer() {
@@ -24,9 +25,11 @@ export default function Footer() {
 
           {/* Company Info - Takes 2 columns on lg screens */}
           <div className="lg:col-span-2 text-center lg:text-left w-full max-w-sm lg:max-w-none">
-            <img
-              src="/black logo .png"
+            <Image
+              src="/logo-black.png"
               alt="Baseaim Logo"
+              width={150}
+              height={48}
               className="h-12 w-auto mb-4 mx-auto lg:mx-0"
             />
             <p className="text-gray-600 font-inter text-sm leading-relaxed mb-6 max-w-sm">

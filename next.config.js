@@ -2,6 +2,7 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
+  skipMiddlewareUrlNormalize: true,
   images: {
     domains: ['baseaim.com', 'widgets.sociablekit.com'],
     formats: ['image/avif', 'image/webp'],

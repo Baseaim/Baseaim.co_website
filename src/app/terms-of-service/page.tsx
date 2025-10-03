@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Footer from '@/components/Footer';
 import { FormProvider } from '@/contexts/FormContext';
 import { useForm } from '@/contexts/FormContext';
@@ -20,9 +21,11 @@ function TermsOfServiceContent() {
             <div className="flex items-center justify-between h-16">
               <div className="flex-shrink-0">
                 <a href="/">
-                  <img
-                    src="/black logo .png"
+                  <Image
+                    src="/logo-black.png"
                     alt="Baseaim Logo"
+                    width={120}
+                    height={32}
                     className="h-8 w-auto"
                   />
                 </a>
