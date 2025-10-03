@@ -191,9 +191,9 @@ function AboutUsContent() {
                   viewport={{ once: true }}
                   className="rounded-xl overflow-hidden min-h-[300px]"
                 >
-                  <img 
-                    src="/frames_1.44.1.png" 
-                    alt="Our Mission" 
+                  <img
+                    src="/frames_1.44.1.webp"
+                    alt="Our Mission"
                     className="w-full h-full object-cover min-h-[300px]"
                   />
                 </motion.div>
@@ -326,7 +326,7 @@ function AboutUsContent() {
                   {
                     name: "Sora Nakayama",
                     position: "CGO & Co-Founder",
-                    image: "/linked in profile pic.png",
+                    image: "/linked in profile pic.webp",
                     socials: {
                       linkedin: "https://www.linkedin.com/in/sora-nakayama-a19a52286",
                       twitter: "#",

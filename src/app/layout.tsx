@@ -46,6 +46,7 @@ export const viewport = {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://baseaim.com'),
   title: 'AI Automation Services | Custom AI Solutions for Business Growth | Baseaim',
   description: 'Leading AI automation company specializing in custom AI solutions, business process automation, and intelligent workflow optimization. Increase efficiency by 300%+ with our proven AI services.',
   keywords: [
@@ -79,7 +80,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: 'https://baseaim.com/og-image.jpg',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Baseaim AI Automation Services - Custom AI Solutions for Business Growth',
@@ -91,7 +92,7 @@ export const metadata: Metadata = {
     title: 'AI Automation Services | Custom AI Solutions for Business Growth | Baseaim',
     description: 'Leading AI automation company specializing in custom AI solutions, business process automation, and intelligent workflow optimization. Increase efficiency by 300%+ with our proven AI services.',
     creator: '@baseaim',
-    images: ['https://baseaim.com/twitter-image.jpg'],
+    images: ['/twitter-image.jpg'],
   },
   robots: {
     index: true,

@@ -24,36 +24,43 @@ interface CountUpNumberProps {
 const CountUpNumber: React.FC<CountUpNumberProps> = ({ value, className, enableCountUp }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const count = useMotionValue(0);
-  
+  const [displayText, setDisplayText] = React.useState(value);
+
   // Parse the numeric value and suffix (%, +, ~, etc.)
   const numericMatch = value.match(/(\d+)/);
   const numericValue = numericMatch ? parseInt(numericMatch[1]) : 0;
   const prefix = value.match(/^[^\d]*/)?.[0] || '';
   const suffix = value.replace(/^[^\d]*\d+/, '') || '';
-  
-  const rounded = useTransform(count, (latest) => Math.round(latest));
-  const displayValue = useTransform(rounded, (latest) => `${prefix}${latest}${suffix}`);
 
   useEffect(() => {
-    if (isInView && enableCountUp) {
-      const animation = animate(count, numericValue, { 
-        duration: 2,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      });
-      return () => animation.stop();
-    } else if (isInView && !enableCountUp) {
-      count.set(numericValue);
+    if (!isInView || !enableCountUp) {
+      setDisplayText(value);
+      return;
     }
-  }, [isInView, numericValue, count, enableCountUp]);
+
+    // Animate count up
+    const duration = 2000; // 2 seconds
+    const steps = 60;
+    const increment = numericValue / steps;
+    let currentStep = 0;
+
+    const timer = setInterval(() => {
+      currentStep++;
+      if (currentStep >= steps) {
+        setDisplayText(`${prefix}${numericValue}${suffix}`);
+        clearInterval(timer);
+      } else {
+        const currentValue = Math.round(increment * currentStep);
+        setDisplayText(`${prefix}${currentValue}${suffix}`);
+      }
+    }, duration / steps);
+
+    return () => clearInterval(timer);
+  }, [isInView, enableCountUp, value, numericValue, prefix, suffix]);
 
   return (
     <span ref={ref} className={className}>
-      {enableCountUp ? (
-        <motion.span>{displayValue}</motion.span>
-      ) : (
-        <span>{value}</span>
-      )}
+      {displayText}
     </span>
   );
 };
