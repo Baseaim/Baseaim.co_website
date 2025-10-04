@@ -170,7 +170,7 @@ function BlogContent() {
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-montserrat">
                 <span className="text-gray-900">Insights & </span>
-                <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                <span className="values-text">
                   Updates
                 </span>
               </h1>

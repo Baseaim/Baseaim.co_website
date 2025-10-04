@@ -23,9 +23,9 @@ function AboutUsContent() {
               {/* Logo */}
               <div className="flex-shrink-0">
                 <a href="/">
-                  <img 
-                    src="/black logo .png" 
-                    alt="Baseaim Logo" 
+                  <img
+                    src="/logo-black.png"
+                    alt="Baseaim Logo"
                     className="h-8 w-auto"
                   />
                 </a>
@@ -45,14 +45,20 @@ function AboutUsContent() {
                 >
                   Solutions
                 </a>
-                <a 
-                  href="/about-us" 
+                <a
+                  href="/about-us"
                   className="text-blue-600 font-medium"
                 >
                   About Us
                 </a>
-                <a 
-                  href="/#contact" 
+                <a
+                  href="/blog"
+                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+                >
+                  Blog
+                </a>
+                <a
+                  href="/#contact"
                   className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
                 >
                   Contact
@@ -113,15 +119,22 @@ function AboutUsContent() {
                   >
                     Solutions
                   </a>
-                  <a 
-                    href="/about-us" 
+                  <a
+                    href="/about-us"
                     className="block text-lg font-medium text-blue-600 transition-colors duration-200 py-2"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     About Us
                   </a>
-                  <a 
-                    href="/#contact" 
+                  <a
+                    href="/blog"
+                    className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Blog
+                  </a>
+                  <a
+                    href="/#contact"
                     className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2"
                     onClick={() => setMobileMenuOpen(false)}
                   >
