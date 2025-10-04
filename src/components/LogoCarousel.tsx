@@ -19,9 +19,11 @@ const LogoCarousel = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.8 }}
       className="logo-carousel-container"
+      role="region"
+      aria-label="Our trusted AI technology partners"
     >
       <div className="logo-carousel-wrapper">
-        <div className="logo-carousel-track">
+        <div className="logo-carousel-track" aria-live="off">
           {/* First set of logos */}
           {brands.map((brand, index) => (
             <div key={`first-${index}`} className="logo-card">

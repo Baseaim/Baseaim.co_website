@@ -35,23 +35,23 @@ const Hero = () => {
             >
               <span className="desktop-breaks">The trusted partners<br />for self sustaining AI<br /></span>
               <span className="mobile-breaks">The trusted<br />partners for<br />self sustaining AI<br /></span>
-              <span className="hero-highlight">
+              <span className="hero-highlight" role="status" aria-live="polite" aria-atomic="true">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={currentWordIndex}
                     initial={{ opacity: 0, y: 12, scale: 0.9 }}
-                    animate={{ 
-                      opacity: 1, 
-                      y: 0, 
+                    animate={{
+                      opacity: 1,
+                      y: 0,
                       scale: 1,
                       transition: {
                         duration: 0.7,
                         ease: "easeOut"
                       }
                     }}
-                    exit={{ 
-                      opacity: 0, 
-                      y: -12, 
+                    exit={{
+                      opacity: 0,
+                      y: -12,
                       scale: 1.1,
                       transition: {
                         duration: 0.4,
