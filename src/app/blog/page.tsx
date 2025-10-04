@@ -25,7 +25,7 @@ function BlogContent() {
               <div className="flex-shrink-0">
                 <a href="/">
                   <img
-                    src="/black logo .png"
+                    src="/logo-black.png"
                     alt="Baseaim Logo"
                     className="h-8 w-auto cursor-pointer"
                   />
