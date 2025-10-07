@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Footer from '@/components/Footer';
+import Navigation from '@/components/Navigation';
 import { FormProvider } from '@/contexts/FormContext';
 import { useForm } from '@/contexts/FormContext';
 import FormSlider from '@/components/FormSlider';
@@ -15,39 +15,7 @@ function TermsOfServiceContent() {
   return (
     <>
       <main className="min-h-screen text-gray-900 font-inter bg-white">
-        {/* Navigation Bar */}
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="flex items-center justify-between h-16">
-              <div className="flex-shrink-0">
-                <a href="/">
-                  <Image
-                    src="/logo-black.png"
-                    alt="Baseaim Logo"
-                    width={120}
-                    height={32}
-                    className="h-8 w-auto"
-                  />
-                </a>
-              </div>
-
-              <div className="hidden md:flex items-center space-x-6">
-                <a href="/" className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200">
-                  Home
-                </a>
-                <a href="/about-us" className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200">
-                  About Us
-                </a>
-                <button
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
-                  onClick={openForm}
-                >
-                  Get In Touch
-                </button>
-              </div>
-            </div>
-          </div>
-        </nav>
+        <Navigation variant="solid" onOpenForm={openForm} />
 
         {/* Terms of Service Content */}
         <div className="pt-24 pb-16 bg-gradient-to-br from-blue-50 via-white to-white">

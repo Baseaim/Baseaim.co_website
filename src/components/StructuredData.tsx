@@ -13,8 +13,8 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
           "@context": "https://schema.org",
           "@type": "Organization",
           "name": "Baseaim",
-          "url": "https://baseaim.com",
-          "logo": "https://baseaim.com/logo.png",
+          "url": "https://baseaim.co",
+          "logo": "https://baseaim.co/logo.png",
           "description": "Leading AI automation company specializing in custom AI solutions, business process automation, and intelligent workflow optimization.",
           "foundingDate": "2024",
           "contactPoint": {

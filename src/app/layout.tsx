@@ -4,34 +4,34 @@ import './globals.css'
 import StructuredData from '@/components/StructuredData'
 import GoogleTagManager from '@/components/GoogleTagManager'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
 })
 
-const poppins = Poppins({ 
+const poppins = Poppins({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700', '800', '900'],
   variable: '--font-poppins',
   display: 'swap',
 })
 
-const workSans = Work_Sans({ 
+const workSans = Work_Sans({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-work-sans',
   display: 'swap',
 })
 
-const montserrat = Montserrat({ 
+const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-montserrat',
   display: 'swap',
 })
 
-const dmSerifDisplay = DM_Serif_Display({ 
+const dmSerifDisplay = DM_Serif_Display({
   subsets: ['latin'],
   weight: '400',
   style: ['normal', 'italic'],
@@ -46,7 +46,7 @@ export const viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://baseaim.com'),
+  metadataBase: new URL('https://baseaim.co'),
   title: 'AI Automation Services | Custom AI Solutions for Business Growth | Baseaim',
   description: 'Leading AI automation company specializing in custom AI solutions, business process automation, and intelligent workflow optimization. Increase efficiency by 300%+ with our proven AI services.',
   keywords: [
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AI Automation Services | Custom AI Solutions for Business Growth | Baseaim',
     description: 'Leading AI automation company specializing in custom AI solutions, business process automation, and intelligent workflow optimization. Increase efficiency by 300%+ with our proven AI services.',
-    url: 'https://baseaim.com',
+    url: 'https://baseaim.co',
     siteName: 'Baseaim',
     type: 'website',
     locale: 'en_US',

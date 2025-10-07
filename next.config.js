@@ -4,7 +4,7 @@ const nextConfig = {
   trailingSlash: true,
   skipMiddlewareUrlNormalize: true,
   images: {
-    domains: ['baseaim.com', 'widgets.sociablekit.com'],
+    domains: ['baseaim.com', 'baseaim.co', 'widgets.sociablekit.com'],
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 768, 1024, 1280, 1536],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
