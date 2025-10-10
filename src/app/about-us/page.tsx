@@ -12,6 +12,21 @@ import GradientBG from '@/components/GradientBG';
 function AboutUsContent() {
   const { openForm, isFormOpen, closeForm } = useForm();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const edenAudioRef = React.useRef<HTMLAudioElement>(null);
+
+  const handleEdenHoverStart = () => {
+    if (edenAudioRef.current) {
+      edenAudioRef.current.currentTime = 0; // Reset to beginning
+      edenAudioRef.current.play().catch(err => console.log('Audio play failed:', err));
+    }
+  };
+
+  const handleEdenHoverEnd = () => {
+    if (edenAudioRef.current) {
+      edenAudioRef.current.pause();
+      edenAudioRef.current.currentTime = 0; // Reset to beginning
+    }
+  };
 
   return (
     <>
@@ -354,7 +369,11 @@ function AboutUsContent() {
                     viewport={{ once: true }}
                     className="group"
                   >
-                    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div
+                      className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                      onMouseEnter={index === 1 ? handleEdenHoverStart : undefined}
+                      onMouseLeave={index === 1 ? handleEdenHoverEnd : undefined}
+                    >
                       <div className="aspect-square bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center overflow-hidden">
                         {founder.image.startsWith('/api/placeholder') ? (
                           <div className="text-blue-600 text-center">
@@ -526,12 +545,17 @@ function AboutUsContent() {
         <Footer />
       </main>
 
+      {/* Audio element for Eden's hover music */}
+      <audio ref={edenAudioRef} preload="auto">
+        <source src="/Edens theme song.mp3" type="audio/mpeg" />
+      </audio>
+
       {/* Form Slider */}
-      <FormSlider 
-        isOpen={isFormOpen} 
-        onClose={closeForm} 
+      <FormSlider
+        isOpen={isFormOpen}
+        onClose={closeForm}
       />
-      
+
       {/* Chatbot Widget */}
       <ChatbotWidget />
     </>
